@@ -37,6 +37,10 @@ export function websocketStore(url) {
   }
 
   return {
+    set(value) {
+      open();
+      socket.send(value);
+    },
     subscribe(subscription) {
       open();
       subscriptions.add(subscription);
