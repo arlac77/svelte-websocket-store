@@ -13,7 +13,6 @@ jobs:
   include:
     - stage: test
       node_js:
-        - '-12'
         - 12.13.1
       script:
         - npm run test

@@ -2,15 +2,14 @@
   "name": "svelte-websocket-store",
   "version": "0.0.0-semantic-release",
   "module": "src/index.mjs",
-  "svelte": "src/index.svelte",
-  "description": "store  with websocket back end",
+  "description": "store  with websocket backend",
   "keywords": [
     "svelte"
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "docs": "documentation readme {{module}} --section=API",
-    "lint": "documentation lint {{module}}",
+    "docs": "documentation readme src/index.mjs --section=API",
+    "lint": "documentation lint src/index.mjs",
     "start": "rollup -c example/rollup.config.js -w",
     "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\""
   },
