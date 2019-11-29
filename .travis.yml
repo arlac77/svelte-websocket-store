@@ -1,0 +1,33 @@
+language: node_js
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+    - /^mkpr/.*$/
+    - /^npm-template-sync/.*$/
+addons:
+  chrome: stable
+env:
+  - BROWSER=chrome
+jobs:
+  include:
+    - stage: test
+      node_js:
+        - '-12'
+        - 12.13.1
+      script:
+        - npm run test
+    - stage: doc
+      node_js: lts/*
+      skip_cleanup: 'true'
+      script:
+        - npm run lint
+        - npm run docs
+    - stage: release
+      node_js: lts/*
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: 'true'
+        script:
+          - npx semantic-release
