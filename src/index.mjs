@@ -27,13 +27,13 @@ export function websocketStore(url) {
 
     socket.onclose = event => {
       close();
-      if(substribtions.size > 0) {
+      if(subscriptions.size > 0) {
         open();
       }
     };
 
     socket.onmessage = event =>
-      subscriptions.forEach(subscription => subscription(event.data));
+    subscriptions.forEach(subscription => subscription(event.data));
   }
 
   return {
@@ -42,7 +42,7 @@ export function websocketStore(url) {
       subscriptions.add(subscription);
       return () => {
         subscriptions.delete(subscription);
-        if(substribtions.size === 0) {
+        if(subscriptions.size === 0) {
           close();
         }
       }
