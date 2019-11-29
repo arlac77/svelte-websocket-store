@@ -25,6 +25,13 @@ export function websocketStore(url) {
       console.log(event);
     };
 
+    socket.onclose = event => {
+      close();
+      if(substribtions.size > 0) {
+        open();
+      }
+    };
+
     socket.onmessage = event =>
       subscriptions.forEach(subscription => subscription(event.data));
   }
