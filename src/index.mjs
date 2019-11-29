@@ -18,7 +18,7 @@ export function websocketStore(url) {
     socket = new WebSocket(url);
 
     socket.onopen = event => {
-      socket.send("from browser");
+      console.log(event);
     };
 
     socket.onerror = event => {
