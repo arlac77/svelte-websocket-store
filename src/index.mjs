@@ -6,7 +6,7 @@ export function websocketStore(url) {
   function close() {
     if (socket) {
       socket.close();
-      delete socket;  
+      socket = undefined;  
     }
   }
 
