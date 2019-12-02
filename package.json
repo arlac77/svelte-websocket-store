@@ -2,6 +2,7 @@
   "name": "svelte-websocket-store",
   "version": "0.0.0-semantic-release",
   "module": "src/index.mjs",
+  "svelte": "src/index.svelte",
   "description": "store  with websocket backend",
   "keywords": [
     "svelte"
@@ -15,7 +16,7 @@
   },
   "devDependencies": {
     "documentation": "^12.1.4",
-    "rollup": "^1.27.5",
+    "rollup": "^1.27.7",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
