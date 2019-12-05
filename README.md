@@ -18,7 +18,7 @@ Provides a svelte store backed by web-sockets.
 
 
 ```js
-import {websocketStore } from 'svelte-websocket-store';
+import { websocketStore } from 'svelte-websocket-store';
 
 export const myStore = websocketStore("wss://mydomain.com/ws1");
 ```
