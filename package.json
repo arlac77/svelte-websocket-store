@@ -2,7 +2,7 @@
   "name": "svelte-websocket-store",
   "version": "0.0.0-semantic-release",
   "module": "src/index.mjs",
-  "description": "store  with websocket backend",
+  "description": "store a with websocket backend",
   "keywords": [
     "svelte"
   ],
