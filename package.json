@@ -15,13 +15,14 @@
     "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\""
   },
   "devDependencies": {
+    "acorn-class-fields": "https://github.com/arlac77/acorn-class-fields.git",
     "documentation": "^12.1.4",
     "rollup": "^1.27.9",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
     "semantic-release": "^15.13.31",
-    "svelte": "^3.16.1",
+    "svelte": "^3.16.3",
     "testcafe": "^1.7.0"
   },
   "engines": {
