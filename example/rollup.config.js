@@ -1,9 +1,6 @@
-import acornClassFields from "acorn-class-fields";
-
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
 import resolve from "rollup-plugin-node-resolve";
-import pkg from "../package.json";
 
 const port = 5000;
 

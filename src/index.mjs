@@ -1,39 +1,46 @@
-
-export function websocketStore(url) {
+export function websocketStore(url, ...args) {
   let socket;
   const subscriptions = new Set();
+  let reopenTimeoutHandler;
 
   function close() {
+    if (reopenTimeoutHandler) {
+      clearTimeout(reopenTimeoutHandler);
+    }
+
     if (socket) {
       socket.close();
-      socket = undefined;  
+      socket = undefined;
+    }
+  }
+
+  function reopen() {
+    close();
+    if (subscriptions.size > 0) {
+      reopenTimeoutHandler = setTimeout(() => open(), 5000);
     }
   }
 
   function open() {
+    if (reopenTimeoutHandler) {
+      clearTimeout(reopenTimeoutHandler);
+      reopenTimeoutHandler = undefined;
+    }
+
     if (socket) {
       return;
     }
 
-    socket = new WebSocket(url);
-
-    socket.onopen = event => {
-      console.log(event);
-    };
+    socket = new WebSocket(url, ...args);
 
     socket.onerror = event => {
       console.log(event);
     };
 
-    socket.onclose = event => {
-      close();
-      if(subscriptions.size > 0) {
-        open();
-      }
-    };
+    socket.onclose = event => reopen();
 
     socket.onmessage = event =>
-    subscriptions.forEach(subscription => subscription(event.data));
+      subscriptions.forEach(subscription => subscription(event.data));
   }
 
   return {
@@ -46,10 +53,10 @@ export function websocketStore(url) {
       subscriptions.add(subscription);
       return () => {
         subscriptions.delete(subscription);
-        if(subscriptions.size === 0) {
+        if (subscriptions.size === 0) {
           close();
         }
-      }
+      };
     }
   };
 }

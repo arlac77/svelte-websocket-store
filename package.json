@@ -20,8 +20,8 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
     "semantic-release": "^15.13.31",
-    "svelte": "^3.16.4",
-    "testcafe": "^1.7.0"
+    "svelte": "^3.16.5",
+    "testcafe": "^1.7.1"
   },
   "engines": {
     "node": ">=12.14.0"
