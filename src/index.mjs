@@ -33,10 +33,6 @@ export function websocketStore(url, ...args) {
 
     socket = new WebSocket(url, ...args);
 
-    socket.onerror = event => {
-      console.log(event);
-    };
-
     socket.onclose = event => reopen();
 
     socket.onmessage = event =>
