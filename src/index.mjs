@@ -35,14 +35,16 @@ export function websocketStore(url, initialValue, ...args) {
 
     socket.onclose = event => reopen();
 
-    socket.onmessage = event =>
-      subscriptions.forEach(subscription => subscription(event.data));
+    socket.onmessage = event => {
+      const data = JSON.parse(event.data);
+      subscriptions.forEach(subscription => subscription(data));
+    };
   }
 
   return {
     set(value) {
       open();
-      socket.send(value);
+      socket.send(JSON.stringify(value));
     },
     subscribe(subscription) {
       open();
