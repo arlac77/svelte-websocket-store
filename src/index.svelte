@@ -1,3 +1,4 @@
 <script context="module">
-  export * from "./index.mjs";
+  import { websocketStore } from "./index.mjs";
+  export { websocketStore };
 </script>
