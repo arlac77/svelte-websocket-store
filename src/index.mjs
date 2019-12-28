@@ -1,4 +1,4 @@
-export function websocketStore(url, initialValue, ...args) {
+export function websocketStore(url, initialValue, socketOptions) {
   let socket;
   const subscriptions = new Set();
   let reopenTimeoutHandler;
@@ -31,7 +31,7 @@ export function websocketStore(url, initialValue, ...args) {
       return;
     }
 
-    socket = new WebSocket(url, ...args);
+    socket = new WebSocket(url, socketOptions);
 
     socket.onclose = event => reopen();
 
