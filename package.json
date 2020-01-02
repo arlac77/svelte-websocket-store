@@ -3,7 +3,7 @@
   "version": "0.0.0-semantic-release",
   "module": "src/index.mjs",
   "svelte": "src/index.svelte",
-  "description": "store a with websocket backend",
+  "description": "svelte store with a websocket backend",
   "keywords": [
     "svelte"
   ],
@@ -22,7 +22,8 @@
     "rollup-plugin-svelte": "^5.1.1",
     "semantic-release": "^15.14.0",
     "svelte": "^3.16.7",
-    "testcafe": "^1.7.1"
+    "testcafe": "^1.7.1",
+    "ws": "^7.2.1"
   },
   "engines": {
     "node": ">=12.14.0"

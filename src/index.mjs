@@ -1,7 +1,18 @@
+const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
+
 export function websocketStore(url, initialValue, socketOptions) {
   let socket;
+  let reopenCount = 0;
   const subscriptions = new Set();
   let reopenTimeoutHandler;
+
+  function reopenTimeout() {
+    const n = reopenCount;
+    reopenCount++;
+    return reopenTimeouts[
+      n >= reopenTimeouts.length - 1 ? reopenTimeouts.length - 1 : n
+    ];
+  }
 
   function close() {
     if (reopenTimeoutHandler) {
@@ -17,7 +28,7 @@ export function websocketStore(url, initialValue, socketOptions) {
   function reopen() {
     close();
     if (subscriptions.size > 0) {
-      reopenTimeoutHandler = setTimeout(() => open(), 5000);
+      reopenTimeoutHandler = setTimeout(() => open(), reopenTimeout());
     }
   }
 
@@ -33,6 +44,7 @@ export function websocketStore(url, initialValue, socketOptions) {
 
     socket = new WebSocket(url, socketOptions);
 
+    socket.onopen = event => reopenCount = 0;
     socket.onclose = event => reopen();
 
     socket.onmessage = event => {
