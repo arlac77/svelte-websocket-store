@@ -13,7 +13,7 @@
 
 # svelte-websocket-store
 
-Provides a svelte store backend by web-sockets.
+Svelte store with a websocket backend
 
 ```js
 import { websocketStore } from 'svelte-websocket-store';
@@ -21,7 +21,10 @@ import { websocketStore } from 'svelte-websocket-store';
 export const myStore = websocketStore("wss://mydomain.com/ws1");
 
 
+// send JSON
 $myStore = { content: "to be saved", other_values: "all" };
+
+
 ```
 
 # API

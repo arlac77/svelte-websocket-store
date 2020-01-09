@@ -1,5 +1,15 @@
+
+
 const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
 
+/**
+ * Create a writable store based on a web-socket.
+ * Data is transferred as JSON
+ * @param {string} url
+ * @param {any} initialValue
+ * @param {string[]} socketOptions
+ * @return {Store}
+ */
 export function websocketStore(url, initialValue, socketOptions) {
   let socket;
   let reopenCount = 0;
