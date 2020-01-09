@@ -18,12 +18,16 @@ Svelte store with a websocket backend
 ```js
 import { websocketStore } from 'svelte-websocket-store';
 
-export const myStore = websocketStore("wss://mydomain.com/ws1");
+const initialValue = { };
+export const myStore = websocketStore("wss://mydomain.com/ws1", initialValue, ['option 1', 'option 2']);
 
 
-// send JSON
+// send JSON to websocket server
 $myStore = { content: "to be saved", other_values: "all" };
 
+
+// receive JSON from server send
+let response = $myStore;
 
 ```
 
