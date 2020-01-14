@@ -1,0 +1,10 @@
+{
+  "name": "svelte-websocket-store",
+  "description": "svelte store with a websocket backend",
+  "icons": [
+    {
+      "src": "facicon.ico",
+      "sizes": "16x16"
+    }
+  ]
+}

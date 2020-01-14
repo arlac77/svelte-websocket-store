@@ -1,7 +1,5 @@
 build
 tests
-test-results
-example
 doc
 *.log
 *.tmp
@@ -11,3 +9,6 @@ doc
 .travis.yml
 .vscode
 .nyc_output
+
+test-results
+example
