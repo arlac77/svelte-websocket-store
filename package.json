@@ -16,13 +16,13 @@
   },
   "devDependencies": {
     "documentation": "^12.1.4",
-    "rollup": "^1.28.0",
+    "rollup": "^1.30.0",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "semantic-release": "^15.14.0",
-    "svelte": "^3.16.7",
-    "testcafe": "^1.7.1",
+    "semantic-release": "^16.0.3",
+    "svelte": "^3.17.3",
+    "testcafe": "^1.8.1",
     "ws": "^7.2.1"
   },
   "engines": {
