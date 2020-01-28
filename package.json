@@ -12,21 +12,29 @@
     "docs": "documentation readme src/index.mjs --section=API",
     "lint": "documentation lint src/index.mjs",
     "start": "rollup -c example/rollup.config.js -w",
-    "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\""
+    "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\" && ava",
+    "prepare": "rollup -c",
+    "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava && c8 report -r lcov -o build/coverage --temp-directory build/tmp"
   },
   "devDependencies": {
+    "@rollup/plugin-commonjs": "^11.0.1",
+    "@rollup/plugin-json": "^4.0.1",
+    "@rollup/plugin-node-resolve": "^7.0.0",
+    "ava": "^2.4.0",
+    "builtin-modules": "^3.1.0",
+    "c8": "^7.0.1",
     "documentation": "^12.1.4",
+    "esm": "^3.2.25",
     "rollup": "^1.30.1",
-    "rollup-plugin-dev": "^1.1.1",
-    "rollup-plugin-node-resolve": "^5.2.0",
-    "rollup-plugin-svelte": "^5.1.1",
+    "rollup-plugin-cleanup": "^3.1.1",
+    "rollup-plugin-executable": "^1.5.2",
     "semantic-release": "^17.0.0",
     "svelte": "^3.17.3",
     "testcafe": "^1.8.1",
     "ws": "^7.2.1"
   },
   "engines": {
-    "node": ">=12.14.0"
+    "node": ">=12.14.1"
   },
   "repository": {
     "type": "git",
@@ -36,6 +44,19 @@
     "url": "https://github.com/arlac77/svelte-websocket-store/issues"
   },
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
+  "ava": {
+    "require": [
+      "esm"
+    ],
+    "extensions": [
+      "mjs"
+    ],
+    "babel": false,
+    "compileEnhancements": false,
+    "files": [
+      "tests/*-test.mjs"
+    ]
+  },
   "template": {
     "repository": {
       "url": "https://github.com/arlac77/npm-package-template-svelte.git"

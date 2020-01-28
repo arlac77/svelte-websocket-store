@@ -1,8 +1,11 @@
 node_modules
-bundle.*
-test-results
+build
+dist
 *.log
 *.dump
 .DS_Store
 .test
 .tmp
+
+bundle.*
+test-results
