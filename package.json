@@ -21,7 +21,7 @@
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
     "semantic-release": "^17.0.0",
-    "svelte": "^3.17.3",
+    "svelte": "^3.18.1",
     "testcafe": "^1.8.1",
     "ws": "^7.2.1"
   },
