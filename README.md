@@ -26,7 +26,7 @@ export const myStore = websocketStore("wss://mydomain.com/ws1", initialValue, ['
 $myStore = { content: "to be saved", other_values: "all" };
 
 
-// receive JSON from server send
+// receive JSON from server (push)
 let response = $myStore;
 
 ```
