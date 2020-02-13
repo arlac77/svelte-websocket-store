@@ -3,6 +3,7 @@ bundle.*
 test-results
 *.log
 *.dump
+build
 .DS_Store
 .test
 .tmp
