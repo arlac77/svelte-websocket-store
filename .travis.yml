@@ -12,8 +12,6 @@ env:
 jobs:
   include:
     - stage: test
-      node_js:
-        - 12.15.0
       script:
         - npm run test
     - stage: doc
