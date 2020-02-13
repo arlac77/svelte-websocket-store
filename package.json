@@ -20,13 +20,13 @@
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
-    "semantic-release": "^17.0.2",
+    "semantic-release": "^17.0.3",
     "svelte": "^3.18.2",
     "testcafe": "^1.8.1",
     "ws": "^7.2.1"
   },
   "engines": {
-    "node": ">=12.14.0"
+    "node": ">=12.16.0"
   },
   "repository": {
     "type": "git",
