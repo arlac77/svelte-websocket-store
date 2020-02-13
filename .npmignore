@@ -7,6 +7,5 @@ doc
 *.tmp
 .test
 .tmp
-.npmrc
 .travis.yml
 .vscode
