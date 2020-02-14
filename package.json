@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "documentation": "^12.1.4",
-    "rollup": "^1.31.0",
+    "rollup": "^1.31.1",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-node-resolve": "^5.2.0",
     "rollup-plugin-svelte": "^5.1.1",
