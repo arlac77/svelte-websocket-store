@@ -9,3 +9,4 @@ doc
 .tmp
 .travis.yml
 .vscode
+rollup.config.js
