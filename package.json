@@ -9,10 +9,10 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "docs": "documentation readme src/index.mjs --section=API",
-    "lint": "documentation lint src/index.mjs",
     "start": "rollup -c example/rollup.config.js -w",
-    "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\""
+    "test": "testcafe $BROWSER:headless tests/*-test.js -s test-results --app-init-delay 500 --app \"rollup -c example/rollup.config.js -w\"",
+    "docs": "documentation readme src/index.mjs --section=API",
+    "lint": "documentation lint src/index.mjs"
   },
   "devDependencies": {
     "documentation": "^12.1.4",
@@ -22,7 +22,7 @@
     "rollup-plugin-svelte": "^5.1.1",
     "semantic-release": "^17.0.4",
     "svelte": "^3.18.2",
-    "testcafe": "^1.8.1",
+    "testcafe": "^1.8.2",
     "ws": "^7.2.1"
   },
   "engines": {
