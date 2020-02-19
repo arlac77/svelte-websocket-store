@@ -13,7 +13,7 @@ jobs:
   include:
     - stage: test
       node_js:
-        - '${node_version}'
+        - '[object Object]'
       script:
         - npm run test
     - stage: doc
