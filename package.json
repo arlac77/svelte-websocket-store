@@ -37,6 +37,9 @@
   },
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "template": {
-    "inheritFrom": "arlac77/template-svelte"
+    "inheritFrom": [
+      "arlac77/template-svelte",
+      "arlac77/template-github"
+    ]
   }
 }
