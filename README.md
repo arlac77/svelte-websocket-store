@@ -51,6 +51,13 @@ With [yarn](https://yarnpkg.com) do:
 yarn add svelte-websocket-store
 ```
 
+## run tests
+
+```sh
+export BROWSER=safari|chrome|...
+npm|yarn test
+```
+
 # license
 
 BSD-2-Clause
