@@ -5,7 +5,9 @@
   "svelte": "src/index.svelte",
   "description": "svelte store with a websocket backend",
   "keywords": [
-    "svelte"
+    "svelte",
+    "store",
+    "websocket"
   ],
   "license": "BSD-2-Clause",
   "scripts": {
