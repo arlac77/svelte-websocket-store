@@ -1,4 +1,4 @@
-import { Selector, ClientFunction } from "testcafe";
+import { Selector } from "testcafe";
 
 const base = "http://localhost:5000/modules/svelte-websocket-store/example";
 
