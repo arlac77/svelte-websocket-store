@@ -1,5 +1,3 @@
-
-
 const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
 
 /**
@@ -7,7 +5,7 @@ const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
  * Data is transferred as JSON.
  * Keeps socket open (reopens if closed) as long as there are subscriptions.
  * @param {string} url the WebSocket url
- * @param {any} initialValue store avalue used befor 1st. response from server is present
+ * @param {any} initialValue store value used befor 1st. response from server is present
  * @param {string[]} socketOptions transparently passed to the WebSocket constructor
  * @return {Store}
  */
@@ -43,7 +41,7 @@ export function websocketStore(url, initialValue, socketOptions) {
     }
   }
 
-  function open() {
+  async function open() {
     if (reopenTimeoutHandler) {
       clearTimeout(reopenTimeoutHandler);
       reopenTimeoutHandler = undefined;
@@ -55,19 +53,26 @@ export function websocketStore(url, initialValue, socketOptions) {
 
     socket = new WebSocket(url, socketOptions);
 
-    socket.onopen = event => reopenCount = 0;
-    socket.onclose = event => reopen();
-
     socket.onmessage = event => {
       initialValue = JSON.parse(event.data);
       subscriptions.forEach(subscription => subscription(initialValue));
     };
+
+    socket.onclose = event => reopen();
+
+    return new Promise((resolve, reject) => {
+      socket.onopen = event => {
+        reopenCount = 0;
+        resolve();
+      };
+    });
   }
 
   return {
     set(value) {
-      open();
-      socket.send(JSON.stringify(value));
+      open().then(() => {
+        socket.send(JSON.stringify(value));
+      });
     },
     subscribe(subscription) {
       open();
