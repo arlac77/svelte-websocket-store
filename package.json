@@ -17,11 +17,8 @@
     "lint": "documentation lint src/index.mjs"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.1.1",
     "documentation": "^12.2.0",
     "rollup": "^2.3.2",
-    "rollup-plugin-dev": "^1.1.1",
-    "rollup-plugin-svelte": "^5.2.0",
     "semantic-release": "^17.0.4",
     "svelte": "^3.20.1",
     "testcafe": "^1.8.3",
