@@ -1,10 +1,4 @@
 language: node_js
-branches:
-  only:
-    - master
-    - /^greenkeeper/.*$/
-    - /^mkpr/.*$/
-    - /^npm-template-sync/.*$/
 addons:
   chrome: stable
 env:
@@ -30,3 +24,9 @@ jobs:
         script:
           - npx semantic-release
         cleanup: 'false'
+branches:
+  only:
+    - master
+    - /^greenkeeper/.*$/
+    - /^mkpr/.*$/
+    - /^npm-template-sync/.*$/
