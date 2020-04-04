@@ -19,7 +19,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.1",
     "documentation": "^12.2.0",
-    "rollup": "^2.3.2",
+    "rollup": "^2.3.3",
     "rollup-plugin-dev": "^1.1.1",
     "rollup-plugin-svelte": "^5.2.0",
     "semantic-release": "^17.0.4",
