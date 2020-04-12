@@ -9,5 +9,5 @@ doc
 .tmp
 .travis.yml
 .vscode
-rollup.config.js
 .github
+rollup.config.mjs
