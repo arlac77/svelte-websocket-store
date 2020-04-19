@@ -1,6 +1,7 @@
 build
 tests
 test-results
+rollup.config.*
 example
 doc
 *.log
@@ -10,4 +11,3 @@ doc
 .travis.yml
 .vscode
 .github
-rollup.config.mjs
