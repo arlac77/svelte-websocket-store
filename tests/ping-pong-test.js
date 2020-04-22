@@ -16,7 +16,7 @@ test("reconnect", async t => {
   await t.navigateTo(`${base}`);
 
   await t.typeText("#input1", "disconnect(10)", { replace: true });
-  await new Promise(resolve=>setTimeout(resolve,1000));
+  await t.wait(2000);
   await t.typeText("#input1", "ping", { replace: true });
   await t.expect(Selector("#input2").value).eql(">>>>ping");
 });
