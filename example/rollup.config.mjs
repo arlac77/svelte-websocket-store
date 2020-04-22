@@ -20,21 +20,61 @@ export default {
       spa: "example/public/index.html",
       basePath: "/base",
       extend(app, modules) {
-        const wss = new WebSocket.Server({ port: wsPort });
-        wss.on("connection", ws => {
-          ws.on("message", message => {
-            wss.clients.forEach(client => {
-              if (client.readyState === WebSocket.OPEN) {
-                client.send(JSON.stringify(">" + JSON.parse(message) ));
-              }
-            });
-          });
-
-          ws.send(JSON.stringify('x'));
-        });
+        WebSocketServer(app, modules);
       }
     }),
     resolve({ browser: true }),
     svelte()
   ]
 };
+
+function WebSocketServer(app, modules) {
+  const wss = new WebSocket.Server({ port: wsPort });
+
+  let timer;
+
+  let n = 0;
+
+  wss.on("connection", ws => {
+    ws.on("message", message => {
+      const m = message.match(/(\w+)\((\w+)\)/);
+      if (m) {
+        switch (m[1]) {
+          case "disconnect":
+            {
+              wss.close();
+              console.log(`close and reopen after ${parseInt(m[2])}ms`);
+              setTimeout(() => WebSocketServer(app, modules), parseInt(m[2]));
+            }
+            break;
+          case "timer": {
+            if (timer) {
+              clearInterval(timer);
+            }
+
+            if (m[2] === "on") {
+              timer = setInterval(() => {
+                n++;
+                wss.clients.forEach(client => {
+                  if (client.readyState === WebSocket.OPEN) {
+                    client.send(JSON.stringify(`timer ${n}`));
+                  }
+                });
+              }, 1000);
+            }
+          }
+        }
+
+        return;
+      }
+
+      wss.clients.forEach(client => {
+        if (client.readyState === WebSocket.OPEN) {
+          client.send(JSON.stringify(">" + JSON.parse(message)));
+        }
+      });
+    });
+
+    ws.send(JSON.stringify("x"));
+  });
+}
