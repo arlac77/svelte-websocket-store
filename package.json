@@ -1,6 +1,9 @@
 {
   "name": "svelte-websocket-store",
   "version": "0.0.0-semantic-release",
+  "publishConfig": {
+    "access": "public"
+  },
   "module": "src/index.mjs",
   "svelte": "src/index.svelte",
   "description": "svelte store with a websocket backend",
@@ -8,6 +11,12 @@
     "svelte",
     "store",
     "websocket"
+  ],
+  "contributors": [
+    {
+      "name": "Markus Felten",
+      "email": "markus.felten@gmx.de"
+    }
   ],
   "license": "BSD-2-Clause",
   "scripts": {
@@ -40,8 +49,8 @@
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "template": {
     "inheritFrom": [
-      "arlac77/template-svelte-component",
-      "arlac77/template-github"
+      "arlac77/template-arlac77-github",
+      "arlac77/template-svelte-component"
     ]
   }
 }
