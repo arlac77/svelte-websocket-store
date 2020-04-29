@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "module": "src/index.mjs",
+  "main": "src/index.mjs",
   "svelte": "src/index.svelte",
   "description": "svelte store with a websocket backend",
   "keywords": [
