@@ -30,7 +30,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^7.1.3",
     "documentation": "^13.0.0",
-    "rollup": "^2.9.1",
+    "rollup": "^2.10.0",
     "rollup-plugin-dev": "^1.1.2",
     "rollup-plugin-svelte": "^5.2.1",
     "semantic-release": "^17.0.7",
