@@ -32,9 +32,9 @@
     "documentation": "^13.0.0",
     "rollup": "^2.10.2",
     "rollup-plugin-dev": "^1.1.2",
-    "rollup-plugin-svelte": "^5.2.1",
+    "rollup-plugin-svelte": "^5.2.2",
     "semantic-release": "^17.0.7",
-    "svelte": "^3.22.2",
+    "svelte": "^3.22.3",
     "testcafe": "^1.8.4",
     "ws": "^7.2.3"
   },
