@@ -28,7 +28,7 @@
     "lint": "documentation lint src/index.mjs"
   },
   "devDependencies": {
-    "@rollup/plugin-node-resolve": "^7.1.3",
+    "@rollup/plugin-node-resolve": "^8.0.0",
     "documentation": "^13.0.0",
     "rollup": "^2.10.5",
     "rollup-plugin-dev": "^1.1.2",
