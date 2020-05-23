@@ -7,7 +7,7 @@ jobs:
   include:
     - stage: test
       node_js:
-        - 14.3.0
+        - lts/*
       script:
         - npm run test
     - stage: doc
