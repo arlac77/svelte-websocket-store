@@ -14,7 +14,7 @@
 Svelte store with a websocket backend
 
 ```js
-import { websocketStore } from 'svelte-websocket-store';
+import websocketStore from 'svelte-websocket-store';
 
 const initialValue = { };
 export const myStore = websocketStore("wss://mydomain.com/ws1", initialValue, ['option 1', 'option 2']);

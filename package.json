@@ -4,8 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "src/index.mjs",
-  "svelte": "src/index.svelte",
+  "main": "./src/index.mjs",
   "description": "svelte store with a websocket backend",
   "keywords": [
     "svelte",
@@ -37,9 +36,6 @@
     "svelte": "^3.22.3",
     "testcafe": "^1.8.5",
     "ws": "^7.2.3"
-  },
-  "engines": {
-    "node": ">=14.3.0"
   },
   "repository": {
     "type": "git",

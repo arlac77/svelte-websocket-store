@@ -70,9 +70,7 @@ export function websocketStore(url, initialValue, socketOptions) {
 
   return {
     set(value) {
-      open().then(() => {
-        socket.send(JSON.stringify(value));
-      });
+      open().then(() => socket.send(JSON.stringify(value)));
     },
     subscribe(subscription) {
       open();
@@ -87,3 +85,5 @@ export function websocketStore(url, initialValue, socketOptions) {
     }
   };
 }
+
+export default websocketStore;
