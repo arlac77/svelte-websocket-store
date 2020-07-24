@@ -1,36 +1,41 @@
 name: CI
-"on": push
+'on': push
 jobs:
   test:
-    runs-on: ${{ matrix.os }}
+    runs-on: '${{ matrix.os }}'
     strategy:
       matrix:
-        os: [ubuntu-latest]
-        node: [14.5.0]
-        browser: [chrome,firefox]
-#        include:
-#          - os: macos-latest
-#            browser: safari
+        os:
+          - ubuntu-latest
+        node:
+          - 14.5.0
+          - 14.6.0
+        browser:
+          - chrome
+          - firefox
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: ${{ matrix.node }}
+          node-version: '${{ matrix.node }}'
       - run: npm install
       - run: npm test
         env:
-          BROWSER: ${{ matrix.browser }}
+          BROWSER: '${{ matrix.browser }}'
   release:
-    needs: [test]
+    needs:
+      - test
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
-          node-version: 14.5.0
+          node-version:
+            - 14.5.0
+            - 14.6.0
       - run: npm install
       - run: npx semantic-release
         env:
-          CI: "true"
-          NPM_TOKEN: "${{ secrets.NPM_TOKEN }}"
-          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
+          CI: 'true'
+          NPM_TOKEN: '${{ secrets.NPM_TOKEN }}'
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
