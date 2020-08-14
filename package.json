@@ -29,12 +29,12 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
     "documentation": "^13.0.2",
-    "rollup": "^2.23.0",
+    "rollup": "^2.25.0",
     "rollup-plugin-dev": "^1.1.2",
     "rollup-plugin-svelte": "^5.2.2",
     "semantic-release": "^17.1.1",
-    "svelte": "^3.24.0",
-    "testcafe": "^1.8.8",
+    "svelte": "^3.24.1",
+    "testcafe": "^1.9.1",
     "ws": "^7.2.3"
   },
   "repository": {
