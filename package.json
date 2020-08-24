@@ -5,13 +5,14 @@
     "access": "public"
   },
   "main": "./src/index.mjs",
+  "svelte": "./src/index.svelte",
   "description": "svelte store with a websocket backend",
   "keywords": [
     "component",
-    "svelte",
     "store",
-    "websocket",
-    "web"
+    "svelte",
+    "web",
+    "websocket"
   ],
   "contributors": [
     {
@@ -29,9 +30,9 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
     "documentation": "^13.0.2",
-    "rollup": "^2.26.3",
+    "rollup": "^2.26.5",
     "rollup-plugin-dev": "^1.1.2",
-    "rollup-plugin-svelte": "^5.2.3",
+    "rollup-plugin-svelte": "git+https://github.com/ctavan/rollup-plugin-svelte.git#handle-missing-exports-gracefully",
     "semantic-release": "^17.1.1",
     "svelte": "^3.24.1",
     "testcafe": "^1.9.1",
