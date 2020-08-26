@@ -31,7 +31,7 @@
     "documentation": "^13.0.2",
     "rollup": "^2.26.3",
     "rollup-plugin-dev": "^1.1.2",
-    "rollup-plugin-svelte": "^5.2.3",
+    "rollup-plugin-svelte": "^6.0.0",
     "semantic-release": "^17.1.1",
     "svelte": "^3.24.1",
     "testcafe": "^1.9.1",
