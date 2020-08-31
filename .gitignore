@@ -1,6 +1,5 @@
 node_modules
 bundle.*
-test-results
 *.log
 *.dump
 build
