@@ -5,13 +5,14 @@
     "access": "public"
   },
   "main": "./src/index.mjs",
+  "svelte": "./src/index.svelte",
   "description": "svelte store with a websocket backend",
   "keywords": [
     "component",
-    "svelte",
     "store",
-    "websocket",
-    "web"
+    "svelte",
+    "web",
+    "websocket"
   ],
   "contributors": [
     {
@@ -23,9 +24,9 @@
   "scripts": {
     "start": "rollup -c example/rollup.config.mjs -w",
     "test": "npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c example/rollup.config.mjs -w\"",
     "docs": "documentation readme ./src/index.mjs --section=API",
-    "lint": "documentation lint ./src/index.mjs"
+    "lint": "documentation lint ./src/index.mjs",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c example/rollup.config.mjs -w\""
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
