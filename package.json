@@ -8,10 +8,10 @@
   "description": "svelte store with a websocket backend",
   "keywords": [
     "component",
-    "svelte",
     "store",
-    "websocket",
-    "web"
+    "svelte",
+    "web",
+    "websocket"
   ],
   "contributors": [
     {
