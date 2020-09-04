@@ -48,13 +48,16 @@
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "template": {
     "properties": {
-      "rollup": { "config": "example/rollup.config.mjs" }
+      "rollup": {
+        "config": "example/rollup.config.mjs"
+      }
     },
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-svelte",
       "arlac77/template-web-component",
-      "arlac77/template-testcafe"
+      "arlac77/template-testcafe",
+      "arlac77/svelte-websocket-store"
     ]
   }
 }
