@@ -23,7 +23,7 @@
   "scripts": {
     "start": "rollup -c example/rollup.config.mjs -w",
     "test": "npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c example/rollup.config.mjs -w\"",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c example/rollup.config.mjs -w\" && testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c  -w\"",
     "docs": "documentation readme ./src/index.mjs --section=API",
     "lint": "documentation lint ./src/index.mjs"
   },
@@ -48,7 +48,9 @@
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "template": {
     "properties": {
-      "rollup": { "config": "example/rollup.config.mjs" }
+      "rollup": {
+        "config": "example/rollup.config.mjs"
+      }
     },
     "inheritFrom": [
       "arlac77/template-arlac77-github",
