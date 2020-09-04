@@ -57,6 +57,9 @@
       "arlac77/template-svelte",
       "arlac77/template-web-component",
       "arlac77/template-testcafe"
+    ],
+    "usedBy": [
+      "arlac77/svelte-websocket-store"
     ]
   }
 }
