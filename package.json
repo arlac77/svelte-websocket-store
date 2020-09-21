@@ -23,19 +23,19 @@
   "scripts": {
     "start": "rollup -c tests/app/rollup.config.mjs -w",
     "test": "npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c tests/app/rollup.config.mjs -w\"",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c tests/app/rollup.config.mjs -w\" && testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c example/rollup.config.mjs -w\"",
     "docs": "documentation readme ./src/index.mjs --section=API",
     "lint": "documentation lint ./src/index.mjs"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^9.0.0",
     "documentation": "^13.0.2",
-    "rollup": "^2.26.10",
+    "rollup": "^2.28.1",
     "rollup-plugin-dev": "^1.1.2",
-    "rollup-plugin-svelte": "^6.0.0",
-    "semantic-release": "^17.1.1",
-    "svelte": "^3.24.1",
-    "testcafe": "^1.9.2",
+    "rollup-plugin-svelte": "^6.0.1",
+    "semantic-release": "^17.1.2",
+    "svelte": "^3.25.1",
+    "testcafe": "^1.9.3",
     "ws": "^7.3.1"
   },
   "repository": {
