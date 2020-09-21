@@ -1,5 +1,5 @@
 <script>
-  import { websocketStore } from "../../src/index.mjs";
+  import { websocketStore } from "../../../src/index.mjs";
 
   export const socket1 = websocketStore('ws://localhost:5001');
   export const socket2 = websocketStore('ws://localhost:5001');

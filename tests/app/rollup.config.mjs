@@ -3,22 +3,23 @@ import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
 import WebSocket from "ws";
 
+const basedir = "tests/app";
 const port = 5000;
 const wsPort = 5001;
 
 export default {
-  input: "example/src/index.mjs",
+  input: `${basedir}/src/index.mjs`,
   output: {
     sourcemap: true,
     format: "esm",
-    file: "example/public/bundle.mjs"
+    file: `${basedir}/public/bundle.main.mjs`
   },
   plugins: [
     dev({
       port,
-      dirs: ["example/public"],
-      spa: "example/public/index.html",
-      basePath: "/base",
+      dirs: [`${basedir}/public`],
+      spa: `${basedir}/public/index.html`,
+      basePath: `/components/svelte-websocket-store/${basedir}`,
       extend(app, modules) {
         WebSocketServer(app, modules);
       }
