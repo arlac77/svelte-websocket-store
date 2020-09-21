@@ -1,5 +1,18 @@
-name: Auto approve
-'on': pull_request
+name: Merge me!
+'on':
+  check_suite:
+    types:
+      - completed
+  pull_request:
+    types:
+      - edited
+      - labeled
+      - opened
+      - ready_for_review
+      - reopened
+      - synchronize
+      - unlabeled
+      - unlocked
 jobs:
   auto-approve:
     runs-on: ubuntu-latest
@@ -10,3 +23,11 @@ jobs:
           'dependabot-preview[bot]'
         with:
           github-token: '${{ secrets.GITHUB_TOKEN }}'
+  merge-me:
+    name: Merge me!
+    runs-on: ubuntu-latest
+    steps:
+      - name: Merge me!
+        uses: ridedott/merge-me-action@master
+        with:
+          GITHUB_TOKEN: '${{ secrets.GITHUB_TOKEN }}'
