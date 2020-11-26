@@ -1,6 +1,7 @@
 import resolve from "@rollup/plugin-node-resolve";
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
+import postcss from "rollup-plugin-postcss";
 import WebSocket from "ws";
 
 const basedir = "tests/app";
@@ -15,6 +16,9 @@ export default {
     file: `${basedir}/public/bundle.main.mjs`
   },
   plugins: [
+    resolve({ browser: true }),
+    svelte(),
+    postcss(),
     dev({
       port,
       dirs: [`${basedir}/public`],
@@ -23,9 +27,7 @@ export default {
       extend(app, modules) {
         WebSocketServer(app, modules);
       }
-    }),
-    resolve({ browser: true }),
-    svelte()
+    })
   ]
 };
 
