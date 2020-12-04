@@ -5,7 +5,7 @@ const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
  * Data is transferred as JSON.
  * Keeps socket open (reopens if closed) as long as there are subscriptions.
  * @param {string} url the WebSocket url
- * @param {any} initialValue store value used befor 1st. response from server is present
+ * @param {any} initialValue store value used before 1st. response from server is present
  * @param {string[]} socketOptions transparently passed to the WebSocket constructor
  * @return {Store}
  */
