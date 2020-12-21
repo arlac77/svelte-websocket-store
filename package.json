@@ -4,8 +4,9 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "./src/index.mjs",
-  "svelte": "./src/index.svelte",
+  "exports": {
+    ".": "./src/index.mjs"
+  },
   "description": "svelte store with a websocket backend",
   "keywords": [
     "component",
@@ -32,6 +33,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.1",
     "documentation": "github:arlac77/documentation",
+    "postcss-import": "12.0.1",
     "rollup": "^2.35.1",
     "rollup-plugin-dev": "^1.1.3",
     "rollup-plugin-postcss": "^3.1.8",
