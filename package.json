@@ -58,6 +58,11 @@
     "properties": {
       "rollup": {
         "config": "tests/app/rollup.config.mjs"
+      },
+      "netlifly": {
+        "site": {
+          "uuid": "aa2f608c-1245-49c7-a307-d05d26dd7888"
+        }
       }
     },
     "inheritFrom": [
