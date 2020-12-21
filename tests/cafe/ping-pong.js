@@ -1,6 +1,6 @@
 import { Selector } from "testcafe";
 
-const base = "http://localhost:5000/modules/svelte-websocket-store/example";
+const base = "http://localhost:5000";
 
 fixture`Getting Started`.page`${base}/index.html`;
 

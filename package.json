@@ -33,6 +33,7 @@
     "build": "rollup -c tests/app/rollup.config.mjs"
   },
   "devDependencies": {
+    "@rollup/plugin-virtual": "^2.0.3",
     "@rollup/plugin-node-resolve": "^11.0.1",
     "documentation": "github:arlac77/documentation",
     "postcss-import": "12.0.1",
