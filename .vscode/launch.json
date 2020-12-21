@@ -4,7 +4,7 @@
         {
             "type": "node",
             "request": "launch",
-            "name": "Debug AVA test",
+            "name": "Debug AVA",
             "runtimeExecutable": "${workspaceFolder}/node_modules/.bin/ava",
             "runtimeArgs": [
               "--serial",
