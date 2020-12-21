@@ -1,3 +1,4 @@
+import virtual from "@rollup/plugin-virtual";
 import resolve from "@rollup/plugin-node-resolve";
 import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
@@ -17,27 +18,26 @@ export default {
     format: "esm",
     file: `${basedir}/public/bundle.main.mjs`
   },
-  plugins: [
-    resolve({ browser: true }),
-    postcss({
-      extract: true,
-      sourceMap: true,
-      minimize: production,
-      plugins: [postcssImport]
-    }),
-    svelte({
-      dev: !production
-    }),
-    dev({
-      port,
-      dirs: [`${basedir}/public`],
-      spa: `${basedir}/public/index.html`,
-      basePath: "/",
-      extend(app, modules) {
-        WebSocketServer(app, modules);
-      }
-    })
-  ]
+  plugins: [resolve({ browser: true }), postcss({
+    extract: true,
+    sourceMap: true,
+    minimize: production,
+    plugins: [postcssImport]
+  }), svelte({
+    dev: !production
+  }), dev({
+    port,
+    dirs: [`${basedir}/public`],
+    spa: `${basedir}/public/index.html`,
+    basePath: "/",
+    extend(app, modules) {
+      WebSocketServer(app, modules);
+    }
+  }), virtual({
+    "node-fetch": "export default fetch",
+    stream: "export class Readable {}",
+    buffer: "export class Buffer {}"
+  })]
 };
 
 function WebSocketServer(app, modules) {
