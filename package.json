@@ -7,6 +7,7 @@
   "exports": {
     ".": "./src/index.mjs"
   },
+  "svelte": "./src/index.svelte",
   "description": "svelte store with a websocket backend",
   "keywords": [
     "component",
@@ -28,7 +29,8 @@
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c tests/app/rollup.config.mjs -w\"",
     "docs": "documentation readme ./src/index.mjs --section=API && documentation readme ./src/index.svelte --section=API",
     "lint": "documentation lint ./src/index.mjs && npm run lint:docs",
-    "lint:docs": "documentation lint ./src/index.svelte"
+    "lint:docs": "documentation lint ./src/index.svelte",
+    "build": "rollup -c tests/app/rollup.config.mjs"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.0.1",
@@ -59,8 +61,11 @@
     },
     "inheritFrom": [
       "arlac77/template-arlac77-github",
-      "arlac77/template-svelte-component",
-      "arlac77/template-testcafe"
+      "arlac77/template-documentation",
+      "arlac77/template-netlify",
+      "arlac77/template-svelte",
+      "arlac77/template-testcafe",
+      "arlac77/template-web-component"
     ]
   }
 }
