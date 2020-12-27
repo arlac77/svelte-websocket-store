@@ -18,26 +18,34 @@ export default {
     format: "esm",
     file: `${basedir}/public/bundle.main.mjs`
   },
-  plugins: [resolve({ browser: true }), postcss({
-    extract: true,
-    sourceMap: true,
-    minimize: production,
-    plugins: [postcssImport]
-  }), svelte({
-    dev: !production
-  }), dev({
-    port,
-    dirs: [`${basedir}/public`],
-    spa: `${basedir}/public/index.html`,
-    basePath: "/",
-    extend(app, modules) {
-      WebSocketServer(app, modules);
-    }
-  }), virtual({
-    "node-fetch": "export default fetch",
-    stream: "export class Readable {}",
-    buffer: "export class Buffer {}"
-  })]
+  plugins: [
+    resolve({ browser: true }),
+    postcss({
+      extract: true,
+      sourceMap: true,
+      minimize: production,
+      plugins: [postcssImport]
+    }),
+    svelte({
+      compilerOptions: {
+        dev: !production
+      }
+    }),
+    dev({
+      port,
+      dirs: [`${basedir}/public`],
+      spa: `${basedir}/public/index.html`,
+      basePath: "/",
+      extend(app, modules) {
+        WebSocketServer(app, modules);
+      }
+    }),
+    virtual({
+      "node-fetch": "export default fetch",
+      stream: "export class Readable {}",
+      buffer: "export class Buffer {}"
+    })
+  ]
 };
 
 function WebSocketServer(app, modules) {
