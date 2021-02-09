@@ -59,6 +59,9 @@
       "rollup": {
         "config": "tests/app/rollup.config.mjs"
       },
+      "web-app": {
+        "publish": "tests/app/public/"
+      },
       "netlifly": {
         "site": {
           "uuid": "aa2f608c-1245-49c7-a307-d05d26dd7888"
