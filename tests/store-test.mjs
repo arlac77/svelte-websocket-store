@@ -1,7 +1,6 @@
 import test from "ava";
 import { connection, wait } from "./helpers/util.mjs";
 import WebSocket from "ws";
-
 import websocketStore from "svelte-websocket-store";
 
 globalThis.WebSocket = WebSocket;
@@ -25,14 +24,14 @@ test("subscription open close", async t => {
   const ws = await connection(t.context.wss);
   t.truthy(ws);
 
-  await wait(100);
+  await wait(50);
 
   let closeCalled = false;
-  ws.on("close",() => closeCalled = true );
+  ws.on("close", () => (closeCalled = true));
 
   unsubscribe();
 
-  await wait(100);
+  await wait(50);
 
   t.true(closeCalled);
 });
@@ -49,13 +48,52 @@ test("read write", async t => {
   t.truthy(ws);
 
   let serverReceived;
-  ws.on("message", message => serverReceived = JSON.parse(message));
+  ws.on("message", message => (serverReceived = JSON.parse(message)));
 
   ws.send(JSON.stringify("TO_CLIENT_1"));
   store.set("FROM_CLIENT_1");
 
-  await wait(100);
-  
+  await wait(50);
+
   t.is(clientReceived, "TO_CLIENT_1");
   t.is(serverReceived, "FROM_CLIENT_1");
+});
+
+test("several subscriptions", async t => {
+  const store = websocketStore(`ws://localhost:${t.context.port}`, "INITIAL");
+
+  const subscriptions = [{}, {}, {}].map(s => {
+    s.unsubscribe = store.subscribe(value => (s.value = value));
+    return s;
+  });
+
+  const ws = await connection(t.context.wss);
+  t.truthy(ws);
+
+  await wait(50);
+
+  let closeCalled = false;
+  ws.on("close", () => (closeCalled = true));
+
+  subscriptions.map(s => s.unsubscribe());
+
+  await wait(50);
+
+  t.true(closeCalled);
+});
+
+test.skip("failing subscription", async t => {
+  try {
+    const store = websocketStore("ws://localhost:9999", "INITIAL");
+    const unsubscribe = store.subscribe(value => {});
+
+    store.set("FROM_CLIENT_1");
+
+    await wait(100);
+
+    t.true(false);
+  } catch (e) {
+  }
+
+  t.true(true);
 });

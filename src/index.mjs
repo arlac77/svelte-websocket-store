@@ -10,10 +10,9 @@ const reopenTimeouts = [2000, 5000, 10000, 30000, 60000];
  * @return {Store}
  */
 export function websocketStore(url, initialValue, socketOptions) {
-  let socket;
+  let socket, openPromise, reopenTimeoutHandler;
   let reopenCount = 0;
   const subscriptions = new Set();
-  let reopenTimeoutHandler;
 
   function reopenTimeout() {
     const n = reopenCount;
@@ -47,15 +46,9 @@ export function websocketStore(url, initialValue, socketOptions) {
       reopenTimeoutHandler = undefined;
     }
 
-    if (socket) {
-      if (1 != socket.readyState) {
-        return new Promise((resolve, reject) => {
-          socket.onopen = event => {
-            resolve();
-          };
-        });
-      }
-      return;
+    // we are still in the opening phase
+    if(openPromise) {
+      return openPromise;
     }
 
     socket = new WebSocket(url, socketOptions);
@@ -67,12 +60,18 @@ export function websocketStore(url, initialValue, socketOptions) {
 
     socket.onclose = event => reopen();
 
-    return new Promise((resolve, reject) => {
+    openPromise = new Promise((resolve, reject) => {
+      socket.onerror = error => {
+        reject(error);
+        openPromise = undefined;
+      };
       socket.onopen = event => {
         reopenCount = 0;
         resolve();
+        openPromise = undefined;
       };
     });
+    return openPromise;
   }
 
   return {
