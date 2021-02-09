@@ -1,6 +1,6 @@
 
 /**
- * Wait for connction.
+ * Wait for connection.
  * @param {WebSocketServer} wss
  */
 export async function connection(wss)
