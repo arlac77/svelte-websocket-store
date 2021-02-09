@@ -16,7 +16,28 @@ test.beforeEach(async t => {
 
 test.afterEach(t => t.context.wss.close());
 
-test("subscription opens connection", async t => {
+test("subscription open close", async t => {
+  const store = websocketStore(`ws://localhost:${t.context.port}`);
+
+  let clientReceived;
+  const unsubscribe = store.subscribe(value => (clientReceived = value));
+
+  const ws = await connection(t.context.wss);
+  t.truthy(ws);
+
+  await wait(100);
+
+  let closeCalled = false;
+  ws.on("close",() => closeCalled = true );
+
+  unsubscribe();
+
+  await wait(100);
+
+  t.true(closeCalled);
+});
+
+test("read write", async t => {
   const store = websocketStore(`ws://localhost:${t.context.port}`, "INITIAL");
 
   let clientReceived;
@@ -30,11 +51,10 @@ test("subscription opens connection", async t => {
   let serverReceived;
   ws.on("message", message => serverReceived = JSON.parse(message));
 
-
   ws.send(JSON.stringify("TO_CLIENT_1"));
   store.set("FROM_CLIENT_1");
 
-  await wait(200);
+  await wait(100);
   
   t.is(clientReceived, "TO_CLIENT_1");
   t.is(serverReceived, "FROM_CLIENT_1");
