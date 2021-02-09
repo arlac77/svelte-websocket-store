@@ -48,6 +48,13 @@ export function websocketStore(url, initialValue, socketOptions) {
     }
 
     if (socket) {
+      if (1 != socket.readyState) {
+        return new Promise((resolve, reject) => {
+          socket.onopen = event => {
+            resolve();
+          };
+        });
+      }
       return;
     }
 
