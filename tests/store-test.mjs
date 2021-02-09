@@ -1,5 +1,5 @@
 import test from "ava";
-import { connection, wait } from "./helpers/server.mjs";
+import { connection, wait } from "./helpers/util.mjs";
 import WebSocket from "ws";
 
 import websocketStore from "svelte-websocket-store";
@@ -21,13 +21,21 @@ test("subscription opens connection", async t => {
 
   let clientReceived;
   store.subscribe(value => (clientReceived = value));
-  t.deepEqual(clientReceived, "INITIAL");
+  t.is(clientReceived, "INITIAL");
 
   const ws = await connection(t.context.wss);
 
   t.truthy(ws);
 
+  let serverReceived;
+  ws.on("message", message => serverReceived = JSON.parse(message));
+
+
   ws.send(JSON.stringify("TO_CLIENT_1"));
-  await wait(300);
+  store.set("FROM_CLIENT_1");
+
+  await wait(200);
+  
   t.is(clientReceived, "TO_CLIENT_1");
+  t.is(serverReceived, "FROM_CLIENT_1");
 });

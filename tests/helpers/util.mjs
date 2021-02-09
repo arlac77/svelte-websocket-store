@@ -1,11 +1,12 @@
-
 /**
  * Wait for connection.
  * @param {WebSocketServer} wss
  */
-export async function connection(wss)
-{
-  return new Promise((resolve, reject) => wss.on("connection", ws => resolve(ws)));
+export async function connection(wss) {
+  return new Promise((resolve, reject) => {
+    wss.on("connection", ws => resolve(ws));
+    wss.on("error", error => reject(error));
+  });
 }
 
 export async function wait(msecs = 1000) {
