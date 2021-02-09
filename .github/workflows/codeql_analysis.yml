@@ -16,14 +16,14 @@ jobs:
         with:
           fetch-depth: '--delete-- 2'
       - run: git checkout
-        if: '${{ github.event_name == ''pull_request'' }}'
+        if: ${{ github.event_name == 'pull_request' }}
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v1
         with:
           languages: javascript
       - uses: actions/setup-node@v1
         with:
-          node-version: 14.15.3
+          node-version: 14.15.4
       - run: npm install
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
