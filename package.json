@@ -25,8 +25,9 @@
   "license": "BSD-2-Clause",
   "scripts": {
     "start": "rollup -c tests/app/rollup.config.mjs -w",
-    "test": "npm run test:cafe",
+    "test": "npm run test:cafe && npm run test:ava",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --app-init-delay 1000 --app \"rollup -c tests/app/rollup.config.mjs -w\"",
+    "test:ava": "ava --timeout 2m tests/*.mjs",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:docs",
     "lint:docs": "documentation lint ./src/**/*.mjs",
@@ -35,6 +36,7 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^11.1.1",
     "@rollup/plugin-virtual": "^2.0.3",
+    "ava": "^3.15.0",
     "documentation": "github:arlac77/documentation",
     "postcss": "^8.2.5",
     "postcss-import": "^14.0.0",
@@ -71,6 +73,7 @@
     },
     "inheritFrom": [
       "arlac77/template-arlac77-github",
+      "arlac77/template-ava",
       "arlac77/template-documentation",
       "arlac77/template-netlify",
       "arlac77/template-svelte",
