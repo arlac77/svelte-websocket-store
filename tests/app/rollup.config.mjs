@@ -56,6 +56,8 @@ function WebSocketServer(app, modules) {
   let n = 0;
 
   wss.on("connection", ws => {
+    console.log(`connection`);
+
     ws.on("message", message => {
       const m = message.match(/(\w+)\((\w+)\)/);
       if (m) {
