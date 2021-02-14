@@ -11,6 +11,7 @@ jobs:
           - 14.15.5
         browser:
           - chrome
+          - firefox
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
