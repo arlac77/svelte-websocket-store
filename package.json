@@ -38,7 +38,7 @@
     "@rollup/plugin-node-resolve": "^11.2.1",
     "@rollup/plugin-virtual": "^2.0.3",
     "ava": "^3.15.0",
-    "c8": "^7.7.1",
+    "c8": "^7.7.2",
     "documentation": "^13.2.4",
     "postcss": "^8.2.13",
     "postcss-import": "^14.0.1",
