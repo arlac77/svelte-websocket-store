@@ -4,7 +4,7 @@
 [![minified size](https://badgen.net/bundlephobia/min/svelte-websocket-store)](https://bundlephobia.com/result?p=svelte-websocket-store)
 [![downloads](http://img.shields.io/npm/dm/svelte-websocket-store.svg?style=flat-square)](https://npmjs.org/package/svelte-websocket-store)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/svelte-websocket-store.svg?style=flat-square)](https://github.com/arlac77/svelte-websocket-store/issues)
-[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fsvelte-websocket-store%2Fbadge&style=flat)](https://actions-badge.atrox.dev/arlac77/svelte-websocket-store/goto)
+[![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fsvelte-websocket-store%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/svelte-websocket-store/goto)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/svelte-websocket-store/badge.svg)](https://snyk.io/test/github/arlac77/svelte-websocket-store)
