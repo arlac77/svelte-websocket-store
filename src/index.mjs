@@ -51,6 +51,7 @@ export function websocketStore(url, initialValue, socketOptions) {
       return openPromise;
     }
 
+    const WebSocket = await import("ws"); // import WebSocket with import() to prevent pre-loading from server
     socket = new WebSocket(url, socketOptions);
 
     socket.onmessage = event => {
