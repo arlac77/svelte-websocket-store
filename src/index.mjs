@@ -76,7 +76,9 @@ export function websocketStore(url, initialValue, socketOptions) {
 
   return {
     set(value) {
-      open().then(() => socket.send(JSON.stringify(value)));
+      const send = () => socket.send(JSON.stringify(value));
+      if (socket.readyState !== WebSocket.OPEN) open().then(send);
+      else send();
     },
     subscribe(subscription) {
       open();
