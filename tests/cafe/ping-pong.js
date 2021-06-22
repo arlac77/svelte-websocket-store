@@ -18,6 +18,6 @@ test("reconnect", async t => {
   await t.typeText("#input1", "disconnect(10)", { replace: true });
   await t.wait(2000);
   await t.typeText("#input1", "ping", { replace: true });
-  await t.wait(500);
+  await t.wait(1500);
   await t.expect(Selector("#input2").value).contains(">>ping");
 });
