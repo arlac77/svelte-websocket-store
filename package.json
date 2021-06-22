@@ -49,7 +49,7 @@
     "semantic-release": "^17.4.4",
     "svelte": "^3.38.2",
     "testcafe": "^1.14.2",
-    "ws": "^7.4.6"
+    "ws": "^7.5.0"
   },
   "repository": {
     "type": "git",
