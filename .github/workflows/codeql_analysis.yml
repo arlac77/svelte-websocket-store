@@ -24,6 +24,7 @@ jobs:
       - uses: actions/setup-node@v2
         with:
           node-version: 14.17.3
+          cache: npm
       - run: npm install
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v1
