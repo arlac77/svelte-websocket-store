@@ -1,6 +1,6 @@
 import test from "ava";
 import { connection, wait } from "./helpers/util.mjs";
-import WebSocket from "ws";
+import {WebSocketServer, WebSocket } from "ws";
 import websocketStore from "svelte-websocket-store";
 
 globalThis.WebSocket = WebSocket;
@@ -10,7 +10,7 @@ let port = 5002;
 test.beforeEach(async t => {
   port++;
   t.context.port = port;
-  t.context.wss = new WebSocket.Server({ port });
+  t.context.wss = new WebSocketServer({ port });
 });
 
 test.afterEach(t => t.context.wss.close());

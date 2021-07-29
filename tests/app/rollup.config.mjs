@@ -4,7 +4,7 @@ import dev from "rollup-plugin-dev";
 import svelte from "rollup-plugin-svelte";
 import postcss from "rollup-plugin-postcss";
 import postcssImport from "postcss-import";
-import WebSocket from "ws";
+import { WebSocketServer, WebSocket } from "ws";
 
 const production = !process.env.ROLLUP_WATCH;
 const basedir = "tests/app";
@@ -37,7 +37,7 @@ export default {
       spa: `${basedir}/public/index.html`,
       basePath: "/",
       extend(app, modules) {
-        WebSocketServer(app, modules);
+        MyWebSocketServer(app, modules);
       }
     }),
     virtual({
@@ -48,53 +48,56 @@ export default {
   ]
 };
 
-function WebSocketServer(app, modules) {
-  const wss = new WebSocket.Server({ port: wsPort });
+function MyWebSocketServer(app, modules) {
+  const wss = new WebSocketServer({ port: wsPort });
 
   let timer;
 
   let n = 0;
 
   wss.on("connection", ws => {
-    console.log(`connection`);
-
     ws.on("message", message => {
-      const m = message.match(/(\w+)\((\w+)\)/);
-      if (m) {
-        switch (m[1]) {
-          case "disconnect":
-            {
-              wss.close();
-              console.log(`close and reopen after ${parseInt(m[2])}ms`);
-              setTimeout(() => WebSocketServer(app, modules), parseInt(m[2]));
-            }
-            break;
-          case "timer": {
-            if (timer) {
-              clearInterval(timer);
-            }
+      message = message.toString();
+      try {
+        const m = message.match(/(\w+)\((\w+)\)/);
+        if (m) {
+          switch (m[1]) {
+            case "disconnect":
+              {
+                wss.close();
+                console.log(`close and reopen after ${parseInt(m[2])}ms`);
+                setTimeout(() => MyWebSocketServer(app, modules), parseInt(m[2]));
+              }
+              break;
+            case "timer": {
+              if (timer) {
+                clearInterval(timer);
+              }
 
-            if (m[2] === "on") {
-              timer = setInterval(() => {
-                n++;
-                wss.clients.forEach(client => {
-                  if (client.readyState === WebSocket.OPEN) {
-                    client.send(JSON.stringify(`timer ${n}`));
-                  }
-                });
-              }, 1000);
+              if (m[2] === "on") {
+                timer = setInterval(() => {
+                  n++;
+                  wss.clients.forEach(client => {
+                    if (client.readyState === WebSocket.OPEN) {
+                      client.send(JSON.stringify(`timer ${n}`));
+                    }
+                  });
+                }, 1000);
+              }
             }
           }
+
+          return;
         }
 
-        return;
+        wss.clients.forEach(client => {
+          if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(">" + JSON.parse(message)));
+          }
+        });
+      } catch (e) {
+        console.log(e);
       }
-
-      wss.clients.forEach(client => {
-        if (client.readyState === WebSocket.OPEN) {
-          client.send(JSON.stringify(">" + JSON.parse(message)));
-        }
-      });
     });
 
     ws.send(JSON.stringify("x"));
