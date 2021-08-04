@@ -47,7 +47,7 @@
     "rollup-plugin-postcss": "^4.0.0",
     "rollup-plugin-svelte": "^7.1.0",
     "semantic-release": "^17.4.4",
-    "svelte": "^3.41.0",
+    "svelte": "^3.42.0",
     "testcafe": "^1.15.1",
     "ws": "^8.0.0"
   },
