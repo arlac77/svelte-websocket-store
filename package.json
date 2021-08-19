@@ -48,7 +48,7 @@
     "rollup-plugin-svelte": "^7.1.0",
     "semantic-release": "^17.4.5",
     "svelte": "^3.42.1",
-    "testcafe": "^1.15.2",
+    "testcafe": "^1.15.3",
     "ws": "^8.2.0"
   },
   "repository": {
