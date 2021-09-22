@@ -40,7 +40,7 @@
     "ava": "^3.15.0",
     "c8": "^7.9.0",
     "documentation": "^13.2.5",
-    "postcss": "^8.3.6",
+    "postcss": "^8.3.7",
     "postcss-import": "^14.0.2",
     "rollup": "^2.57.0",
     "rollup-plugin-dev": "^1.1.3",
