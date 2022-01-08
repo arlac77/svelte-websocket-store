@@ -36,8 +36,8 @@ export default {
       dirs: [`${basedir}/public`],
       spa: `${basedir}/public/index.html`,
       basePath: "/",
-      extend(app, modules) {
-        MyWebSocketServer(app, modules);
+      extend(fastify, options, done) {
+        MyWebSocketServer(fastify, options, done);
       }
     }),
     virtual({
@@ -48,8 +48,10 @@ export default {
   ]
 };
 
-function MyWebSocketServer(app, modules) {
+function MyWebSocketServer(fastify, options, done) {
   const wss = new WebSocketServer({ port: wsPort });
+
+  done();
 
   let timer;
 
@@ -66,7 +68,7 @@ function MyWebSocketServer(app, modules) {
               {
                 wss.close();
                 console.log(`close and reopen after ${parseInt(m[2])}ms`);
-                setTimeout(() => MyWebSocketServer(app, modules), parseInt(m[2]));
+                setTimeout(() => MyWebSocketServer(fastify, options, done), parseInt(m[2]));
               }
               break;
             case "timer": {
