@@ -8,7 +8,7 @@ jobs:
         os:
           - ubuntu-latest
         node:
-          - 16.13.2
+          - 16.14.0
         browser:
           - chrome
           - firefox
@@ -36,7 +36,7 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
-          node-version: 16.13.2
+          node-version: 16.14.0
           cache: npm
       - run: npm install
       - run: npx semantic-release
