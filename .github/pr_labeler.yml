@@ -30,3 +30,8 @@ openapi:
   - openapi/*
 styling:
   - '**/*.css'
+systemd:
+  - '**/*.service'
+  - '**/*.path'
+  - '**/*.socket'
+  - '**/*.timer'
