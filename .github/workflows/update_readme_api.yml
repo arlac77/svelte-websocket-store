@@ -10,7 +10,7 @@ jobs:
       - uses: actions/setup-node@v3.2.0
         with:
           node-version: 16.15.0
-      - run: npm install
+      - run: npm ci
       - run: npm run docs
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:

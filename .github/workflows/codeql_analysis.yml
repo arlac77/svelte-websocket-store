@@ -25,6 +25,6 @@ jobs:
         with:
           node-version: 16.15.0
           cache: npm
-      - run: npm install
+      - run: npm ci
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
