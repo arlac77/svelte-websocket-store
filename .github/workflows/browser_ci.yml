@@ -14,7 +14,7 @@ jobs:
           - firefox
     steps:
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.2.0
+      - uses: actions/setup-node@v3.3.0
         with:
           node-version: ${{ matrix.node }}
           cache: npm
@@ -44,7 +44,7 @@ jobs:
 
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
       - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3.2.0
+      - uses: actions/setup-node@v3.3.0
         with:
           node-version: 16.15.0
           cache: npm
