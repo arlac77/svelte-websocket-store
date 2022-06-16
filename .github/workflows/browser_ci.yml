@@ -22,6 +22,9 @@ jobs:
       - run: npm test
         env:
           BROWSER: ${{ matrix.browser }}
+      - run: npm cit
+        env:
+          BROWSER: ${{ matrix.browser }}
       - uses: actions/upload-artifact@v3
         with:
           name: screenshots
