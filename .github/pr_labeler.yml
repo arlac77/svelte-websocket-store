@@ -16,6 +16,7 @@ git:
 npm:
   - .npmignore
   - package.json
+  - package-lock.json
 deployment:
   - netlify.toml
   - _redirects
