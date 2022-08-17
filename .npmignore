@@ -5,8 +5,6 @@ example
 doc
 *.log
 *.tmp
-.test
-.tmp
 .vscode
 .github
 netlify.toml
