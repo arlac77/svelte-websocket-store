@@ -1,11 +1,8 @@
 build
 tests
-rollup.config.*
-example
 doc
 *.log
 *.tmp
 .vscode
 .github
 netlify.toml
-jsconfig.json
