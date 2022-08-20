@@ -5,4 +5,5 @@ doc
 *.tmp
 .vscode
 .github
+rollup.config.*
 netlify.toml
