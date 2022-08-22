@@ -52,7 +52,7 @@ Keeps socket open (reopens if closed) as long as there are subscriptions.
 *   `initialValue` **any** store value used before 1st. response from server is present
 *   `socketOptions` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** transparently passed to the WebSocket constructor
 
-Returns **Store** 
+Returns **Store**&#x20;
 
 # install
 
