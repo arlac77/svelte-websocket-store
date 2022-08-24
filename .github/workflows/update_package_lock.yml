@@ -1,0 +1,23 @@
+name: Update package lock
+'on':
+  schedule:
+    - cron: 18 16 * * *
+jobs:
+  update_package_lock:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3.4.1
+        with:
+          node-version: 18.7.0
+      - run: npm install
+      - uses: gr2m/create-or-update-pull-request-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          path: package-lock.json
+          title: update package lock
+          body: bring lock in sync
+          branch: package-lock
+          labels: npm
+          commit-message: 'chore(deps): lock'
