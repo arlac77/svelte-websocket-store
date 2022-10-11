@@ -42,7 +42,7 @@
     "documentation": "^14.0.0",
     "postcss": "^8.4.17",
     "postcss-import": "^15.0.0",
-    "rollup": "^2.79.1",
+    "rollup": "^3.0.0",
     "rollup-plugin-dev": "^2.0.2",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-svelte": "^7.1.0",
