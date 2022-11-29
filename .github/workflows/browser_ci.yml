@@ -13,7 +13,12 @@ jobs:
           - chrome
           - firefox
         node-version: 18.12.1
+        firefox:
+          - latest
     steps:
+      - uses: browser-actions/setup-firefox@latest
+        with:
+          firefox-version: ${{ matrix.firefox }}
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3.5.1
         with:
