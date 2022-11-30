@@ -2,6 +2,7 @@ name: Update package lock
 'on':
   schedule:
     - cron: 18 16 * * *
+    - cron: 13,18 16 * * *
 jobs:
   update_package_lock:
     runs-on: ubuntu-latest
