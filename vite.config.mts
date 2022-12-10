@@ -1,6 +1,10 @@
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
+import { WebSocketServer, WebSocket } from "ws";
+
+const port = 5000;
+const wsPort = 5001;
 
 export default defineConfig(async ({ command, mode }) => {
   const res = extractFromPackage({
@@ -38,3 +42,62 @@ export default defineConfig(async ({ command, mode }) => {
     }
   };
 });
+
+
+function MyWebSocketServer(fastify, options, done) {
+  const wss = new WebSocketServer({ port: wsPort });
+
+  done();
+
+  let timer;
+
+  let n = 0;
+
+  wss.on("connection", ws => {
+    ws.on("message", message => {
+      message = message.toString();
+      try {
+        const m = message.match(/(\w+)\((\w+)\)/);
+        if (m) {
+          switch (m[1]) {
+            case "disconnect":
+              {
+                wss.close();
+                console.log(`close and reopen after ${parseInt(m[2])}ms`);
+                setTimeout(() => MyWebSocketServer(fastify, options, done), parseInt(m[2]));
+              }
+              break;
+            case "timer": {
+              if (timer) {
+                clearInterval(timer);
+              }
+
+              if (m[2] === "on") {
+                timer = setInterval(() => {
+                  n++;
+                  wss.clients.forEach(client => {
+                    if (client.readyState === WebSocket.OPEN) {
+                      client.send(JSON.stringify(`timer ${n}`));
+                    }
+                  });
+                }, 1000);
+              }
+            }
+          }
+
+          return;
+        }
+
+        wss.clients.forEach(client => {
+          if (client.readyState === WebSocket.OPEN) {
+            client.send(JSON.stringify(">" + JSON.parse(message)));
+          }
+        });
+      } catch (e) {
+        console.log(e);
+      }
+    });
+
+    ws.send(JSON.stringify("x"));
+  });
+}
