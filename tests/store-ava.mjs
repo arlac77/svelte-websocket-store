@@ -1,6 +1,6 @@
 import test from "ava";
 import { connection, wait } from "./helpers/util.mjs";
-import {WebSocketServer, WebSocket } from "ws";
+import { WebSocketServer, WebSocket } from "ws";
 import websocketStore from "svelte-websocket-store";
 
 globalThis.WebSocket = WebSocket;
@@ -92,8 +92,7 @@ test.skip("failing subscription", async t => {
     await wait(100);
 
     t.true(false);
-  } catch (e) {
-  }
+  } catch (e) {}
 
   t.true(true);
 });
