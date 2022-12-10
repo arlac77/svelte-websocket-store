@@ -13,6 +13,7 @@
     "component",
     "store",
     "svelte",
+    "vite",
     "web",
     "websocket"
   ],
@@ -24,31 +25,31 @@
   ],
   "license": "BSD-2-Clause",
   "scripts": {
-    "start": "rollup -c tests/app/rollup.config.mjs -w",
+    "prepare": "vite build",
+    "start": "vite",
     "test": "npm run test:ava && npm run test:cafe",
-    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --page-request-timeout 3000 --app-init-delay 3000 --app \"rollup -c tests/app/rollup.config.mjs -w\"",
+    "test:cafe": "testcafe $BROWSER:headless tests/cafe/*.js -s build/test --page-request-timeout 3000 --app-init-delay 3000 --app \"vite preview\"",
     "test:ava": "ava --timeout 2m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 2m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:docs",
     "lint:docs": "documentation lint ./src/**/*.mjs",
-    "build": "rollup -c tests/app/rollup.config.mjs"
+    "build": "rollup -c tests/app/rollup.config.mjs",
+    "preview": "vite preview"
   },
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-virtual": "^3.0.1",
+    "@sveltejs/vite-plugin-svelte": "^2.0.0",
     "ava": "^5.1.0",
     "c8": "^7.12.0",
     "documentation": "^14.0.0",
-    "postcss": "^8.4.19",
-    "postcss-import": "^15.1.0",
     "rollup": "^3.7.2",
     "rollup-plugin-dev": "^2.0.4",
-    "rollup-plugin-postcss": "^4.0.2",
-    "rollup-plugin-svelte": "^7.1.0",
     "semantic-release": "^19.0.5",
     "svelte": "^3.54.0",
     "testcafe": "^2.1.0",
+    "vite": "^4.0.0",
     "ws": "^8.11.0"
   },
   "repository": {
