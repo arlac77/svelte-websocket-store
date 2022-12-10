@@ -5,4 +5,3 @@ doc
 *.tmp
 .vscode
 .github
-netlify.toml

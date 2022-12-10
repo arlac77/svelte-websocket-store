@@ -1,4 +1,3 @@
-bundle.*
 /node_modules/**
 *.log
 *.dump
