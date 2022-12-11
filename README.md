@@ -10,7 +10,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/svelte-websocket-store/badge.svg)](https://snyk.io/test/github/arlac77/svelte-websocket-store)
 [![Coverage Status](https://coveralls.io/repos/arlac77/svelte-websocket-store/badge.svg)](https://coveralls.io/github/arlac77/svelte-websocket-store)
 [![Tested with TestCafe](https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg)](https://github.com/DevExpress/testcafe)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/aa2f608c-1245-49c7-a307-d05d26dd7888/deploy-status)](https://app.netlify.com/sites/svelte-websocket-store/deploys)
 
 # svelte-websocket-store
 
