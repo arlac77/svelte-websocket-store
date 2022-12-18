@@ -45,7 +45,7 @@
     "semantic-release": "^19.0.5",
     "svelte": "^3.55.0",
     "testcafe": "^2.1.0",
-    "vite": "^4.0.1",
+    "vite": "^4.0.2",
     "ws": "^8.11.0"
   },
   "repository": {
