@@ -7,12 +7,11 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-        node:
-          - 18.11.0
         browser:
           - chrome
           - firefox
-        node-version: 18.12.1
+        node-version:
+          - 18.12.1
         firefox:
           - latest
     steps:
