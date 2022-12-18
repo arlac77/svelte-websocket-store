@@ -41,7 +41,7 @@
     "ava": "^5.1.0",
     "c8": "^7.12.0",
     "documentation": "^14.0.1",
-    "npm-pkgbuild": "^10.15.20",
+    "npm-pkgbuild": "^10.15.23",
     "semantic-release": "^19.0.5",
     "svelte": "^3.55.0",
     "testcafe": "^2.1.0",
@@ -56,6 +56,41 @@
     "url": "https://github.com/arlac77/svelte-websocket-store/issues"
   },
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
+  "pkgbuild": {
+    "content": {
+      "${install.dir}": "build/",
+      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
+    },
+    "groups": "examples"
+  },
+  "release": {
+    "plugins": [
+      "@semantic-release/commit-analyzer",
+      "@semantic-release/release-notes-generator",
+      "@semantic-release/npm",
+      [
+        "@semantic-release/exec",
+        {
+          "publishCmd": "npx npm-pkgbuild --available --continue --publish dist"
+        }
+      ],
+      [
+        "@semantic-release/github",
+        {
+          "assets": [
+            {
+              "path": "dist/*.deb",
+              "label": "Debian Package"
+            },
+            {
+              "path": "dist/*.pkg.*",
+              "label": "Arch Linux Package"
+            }
+          ]
+        }
+      ]
+    ]
+  },
   "template": {
     "inheritFrom": [
       "arlac77/template-arlac77-github",
@@ -63,6 +98,8 @@
       "arlac77/template-documentation",
       "arlac77/template-svelte",
       "arlac77/template-testcafe",
+      "arlac77/template-pacman",
+      "arlac77/template-cloudflare",
       "arlac77/template-web-component"
     ]
   }
