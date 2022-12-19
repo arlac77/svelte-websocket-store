@@ -6,3 +6,4 @@ build
 *.node
 .test
 .tmp
+dist
