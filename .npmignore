@@ -5,3 +5,6 @@ doc
 *.tmp
 .vscode
 .github
+.node-version
+pkg
+dist
