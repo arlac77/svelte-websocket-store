@@ -52,7 +52,7 @@
     "ws": "^8.11.0"
   },
   "optionalDependencies": {
-    "mf-hosting": "^1.8.1"
+    "mf-hosting": "^1.8.2"
   },
   "repository": {
     "type": "git",
