@@ -65,8 +65,7 @@
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": "build/",
-      "${nginx.sites.dir}${name}.conf": "pkg/nginx.conf"
+      "${install.dir}": "build/"
     },
     "example": true,
     "frontend": true
