@@ -88,15 +88,31 @@
           "assets": [
             {
               "path": "dist/*.deb",
-              "label": "Debian Package"
+              "label": "any Debian Package"
             },
             {
-              "path": "dist/*.pkg.*",
-              "label": "Arch Linux Package"
+              "path": "dist/*any.pkg.*",
+              "label": "any Arch Linux Package"
             },
             {
-              "path": "dist/*.rpm",
-              "label": "RPM"
+              "path": "dist/*x86_64.pkg.*",
+              "label": "x86_64 Arch Linux Package"
+            },
+            {
+              "path": "dist/*aarch64.pkg.*",
+              "label": "arm64 Arch Linux Package"
+            },
+            {
+              "path": "dist/*noarch.rpm",
+              "label": "noarch RPM"
+            },
+            {
+              "path": "dist/*x86_64.rpm",
+              "label": "x86_64 RPM"
+            },
+            {
+              "path": "dist/*aarch64.rpm",
+              "label": "arm64 RPM"
             }
           ]
         }
