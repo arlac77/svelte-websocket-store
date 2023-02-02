@@ -7,10 +7,13 @@ const port = 5000;
 const wsPort = 5001;
 
 export default defineConfig(async ({ command, mode }) => {
-  const res = extractFromPackage({
-    dir: new URL("./", import.meta.url).pathname,
-    mode
-  }, process.env);
+  const res = extractFromPackage(
+    {
+      dir: new URL("./", import.meta.url).pathname,
+      mode
+    },
+    process.env
+  );
   const first = await res.next();
   const pkg = first.value;
   const properties = pkg.properties;
@@ -42,7 +45,6 @@ export default defineConfig(async ({ command, mode }) => {
   };
 });
 
-
 function MyWebSocketServer(fastify, options, done) {
   const wss = new WebSocketServer({ port: wsPort });
 
@@ -63,7 +65,10 @@ function MyWebSocketServer(fastify, options, done) {
               {
                 wss.close();
                 console.log(`close and reopen after ${parseInt(m[2])}ms`);
-                setTimeout(() => MyWebSocketServer(fastify, options, done), parseInt(m[2]));
+                setTimeout(
+                  () => MyWebSocketServer(fastify, options, done),
+                  parseInt(m[2])
+                );
               }
               break;
             case "timer": {
