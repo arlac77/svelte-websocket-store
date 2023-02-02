@@ -1,8 +1,8 @@
 import { Selector } from "testcafe";
 
-const base = "http://localhost:5000";
+const base = "http://localhost:5173/";
 
-fixture`Getting Started`.page`${base}/index.html`;
+fixture`Getting Started`.page`${base}`;
 
 test("ping pong", async t => {
   await t.navigateTo(`${base}`);
