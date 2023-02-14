@@ -49,7 +49,7 @@
     "svelte": "^3.55.1",
     "testcafe": "^2.3.1",
     "vite": "^4.1.1",
-    "ws": "^8.12.0"
+    "ws": "^8.12.1"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.5",
