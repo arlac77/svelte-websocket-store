@@ -11,7 +11,6 @@ test("ping pong", async t => {
   await t.expect(Selector("#input2").value).contains(">>ping");
 });
 
-
 test("reconnect", async t => {
   await t.navigateTo(`${base}`);
 
