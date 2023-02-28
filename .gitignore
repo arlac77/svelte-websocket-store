@@ -6,4 +6,5 @@ build
 *.node
 .test
 .tmp
+bun.lockb
 dist
