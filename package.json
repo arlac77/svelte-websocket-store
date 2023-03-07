@@ -47,7 +47,7 @@
     "npm-pkgbuild": "^11.5.15",
     "semantic-release": "^20.1.1",
     "svelte": "^3.55.1",
-    "testcafe": "^2.3.1",
+    "testcafe": "^2.4.0",
     "vite": "^4.1.4",
     "ws": "^8.12.1"
   },
