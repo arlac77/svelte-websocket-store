@@ -45,7 +45,7 @@
     "c8": "^7.13.0",
     "documentation": "^14.0.1",
     "npm-pkgbuild": "^11.7.5",
-    "semantic-release": "^21.0.0",
+    "semantic-release": "^21.0.1",
     "svelte": "^3.58.0",
     "testcafe": "^2.4.0",
     "vite": "^4.2.1",
