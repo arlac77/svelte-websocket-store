@@ -42,7 +42,7 @@
     "@semantic-release/release-notes-generator": "^11.0.3",
     "@sveltejs/vite-plugin-svelte": "^2.4.1",
     "ava": "^5.3.0",
-    "c8": "^7.14.0",
+    "c8": "^8.0.0",
     "documentation": "^14.0.2",
     "npm-pkgbuild": "^11.8.6",
     "semantic-release": "^21.0.5",
