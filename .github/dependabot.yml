@@ -13,3 +13,11 @@ updates:
     directory: /
     schedule:
       interval: daily
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: daily
+    commit-message:
+      prefix: 'chore(action):'
+    labels:
+      - dependencies
