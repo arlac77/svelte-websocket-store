@@ -1,5 +1,13 @@
 name: CI
-'on': push
+'on':
+  push:
+    branches:
+      - master
+      - next
+  pull_request:
+    branches:
+      - master
+      - next
 jobs:
   test:
     runs-on: ${{ matrix.os }}
