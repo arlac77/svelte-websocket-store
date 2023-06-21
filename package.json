@@ -44,7 +44,7 @@
     "ava": "^5.3.1",
     "c8": "^8.0.0",
     "documentation": "^14.0.2",
-    "npm-pkgbuild": "^11.8.6",
+    "npm-pkgbuild": "^11.8.8",
     "semantic-release": "^21.0.5",
     "svelte": "^3.59.2s",
     "testcafe": "^2.6.2",
