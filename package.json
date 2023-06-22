@@ -40,7 +40,7 @@
     "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^11.0.3",
-    "@sveltejs/vite-plugin-svelte": "^2.4.1",
+    "@sveltejs/vite-plugin-svelte": "^2.4.2",
     "ava": "^5.3.1",
     "c8": "^8.0.0",
     "documentation": "^14.0.2",
