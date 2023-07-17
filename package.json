@@ -44,11 +44,11 @@
     "ava": "^5.3.1",
     "c8": "^8.0.0",
     "documentation": "^14.0.2",
-    "npm-pkgbuild": "^11.8.14",
+    "npm-pkgbuild": "^11.9.1",
     "semantic-release": "^21.0.7",
     "svelte": "^4.0.5",
     "testcafe": "^3.0.1",
-    "vite": "^4.4.2",
+    "vite": "^4.4.4",
     "ws": "^8.13.0"
   },
   "optionalDependencies": {
