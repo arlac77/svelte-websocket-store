@@ -21,7 +21,7 @@ jobs:
         uses: github/codeql-action/init@v2
         with:
           languages: javascript
-      - uses: actions/setup-node@v3.7.0
+      - uses: actions/setup-node@v3.8.0
         with:
           node-version: 18.17.1
           cache: npm
