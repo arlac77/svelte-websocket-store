@@ -52,7 +52,7 @@
     "ws": "^8.14.2"
   },
   "optionalDependencies": {
-    "mf-hosting-cloudflare": "^1.0.5",
+    "mf-hosting-cloudflare": "^1.0.6",
     "mf-hosting-frontend": "^2.2.3"
   },
   "repository": {
