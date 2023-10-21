@@ -12,7 +12,6 @@ jobs:
           node-version: 20.8.1
       - run: rm package-lock.json
       - run: npm install
-      - run: test
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
