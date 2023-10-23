@@ -7,7 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v3.8.2
+      - uses: actions/setup-node@v4
         with:
           node-version: 20.8.1
       - run: rm package-lock.json
