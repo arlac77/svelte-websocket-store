@@ -5,11 +5,15 @@ name: Update package lock
 jobs:
   update_package_lock:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 20.9.0
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 20.9.0
+          node-version: ${{ matrix.node-version }}
       - run: rm package-lock.json
       - run: npm install
       - run: npm test
