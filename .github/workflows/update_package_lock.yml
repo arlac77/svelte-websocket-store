@@ -25,7 +25,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           path: package-lock.json
-          title: update package lock
+          title: Regenerate package lock
           body: bring lock in sync
           branch: package-lock
           labels: npm
