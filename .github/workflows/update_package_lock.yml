@@ -17,8 +17,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - run: rm package-lock.json
-      - run: npm install
-      - run: npm test
+      - run: npm install-test
         env:
           BROWSER: ${{ matrix.browser }}
       - uses: gr2m/create-or-update-pull-request-action@v1
