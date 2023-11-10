@@ -47,8 +47,11 @@ export function websocketStore(url, initialValue, socketOptions) {
     }
 
     // we are still in the opening phase
-    if(openPromise) {
+    if (openPromise) {
       return openPromise;
+    }
+    if (socket) {
+      return
     }
 
     socket = new WebSocket(url, socketOptions);

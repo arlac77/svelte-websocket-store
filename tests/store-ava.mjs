@@ -96,3 +96,21 @@ test.skip("failing subscription", async t => {
 
   t.true(true);
 });
+
+test("should not open a new ws connection if already existing", async t => {
+  let counter = 0;
+  t.context.wss.on('connection', () => { counter += 1 })
+  
+  const store = websocketStore(`ws://localhost:${t.context.port}`, "INITIAL");
+
+  const unsubscribe = store.subscribe(value => {});
+  await wait(300);
+  const anotherUnsubscribe = store.subscribe(value => {});
+  
+  await wait(50);
+
+  unsubscribe();
+  anotherUnsubscribe();
+
+  t.is(counter, 1)
+})
