@@ -3,7 +3,6 @@ import { defineConfig } from "vite";
 import { extractFromPackage } from "npm-pkgbuild";
 import { WebSocketServer, WebSocket } from "ws";
 
-const port = 5000;
 const wsPort = 5001;
 
 export default defineConfig(async ({ command, mode }) => {
@@ -23,6 +22,8 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_NAME"] = properties.name;
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
+
+  MyWebSocketServer();
 
   return {
     base,
@@ -45,10 +46,9 @@ export default defineConfig(async ({ command, mode }) => {
   };
 });
 
-function MyWebSocketServer(fastify, options, done) {
+function MyWebSocketServer() {
   const wss = new WebSocketServer({ port: wsPort });
 
-  done();
 
   let timer;
 
@@ -66,7 +66,7 @@ function MyWebSocketServer(fastify, options, done) {
                 wss.close();
                 console.log(`close and reopen after ${parseInt(m[2])}ms`);
                 setTimeout(
-                  () => MyWebSocketServer(fastify, options, done),
+                  () => MyWebSocketServer(),
                   parseInt(m[2])
                 );
               }
