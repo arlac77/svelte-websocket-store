@@ -31,7 +31,8 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
-      - run: npm cit
+      - run: npm ci
+      - run: npm test
         env:
           BROWSER: ${{ matrix.browser }}
       - uses: actions/upload-artifact@v3
