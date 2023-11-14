@@ -23,7 +23,9 @@ export default defineConfig(async ({ command, mode }) => {
   process.env["VITE_DESCRIPTION"] = properties.description;
   process.env["VITE_VERSION"] = properties.version;
 
-  MyWebSocketServer();
+  if(!production) {
+    MyWebSocketServer();
+  }
 
   return {
     base,
@@ -48,7 +50,6 @@ export default defineConfig(async ({ command, mode }) => {
 
 function MyWebSocketServer() {
   const wss = new WebSocketServer({ port: wsPort });
-
 
   let timer;
 
