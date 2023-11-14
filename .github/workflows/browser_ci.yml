@@ -28,6 +28,12 @@ jobs:
       - run: npm cit
         env:
           BROWSER: ${{ matrix.browser }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: screenshots
+          path: ${{ github.workspace }}/build/test/**/*
+          retention-days: 3
+        if: always()
   release:
     needs:
       - test
