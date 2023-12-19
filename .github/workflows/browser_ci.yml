@@ -21,14 +21,14 @@ jobs:
           - 20.10.0
     steps:
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.0.1
         with:
           node-version: ${{ matrix.node-version }}
           cache: npm
       - run: npm cit
         env:
           BROWSER: ${{ matrix.browser }}
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v3
         with:
           name: screenshots
           path: ${{ github.workspace }}/build/test/**/*
@@ -50,7 +50,7 @@ jobs:
 
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
       - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/setup-node@v4.0.1
         with:
           node-version: 20.10.0
           cache: npm
