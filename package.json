@@ -122,11 +122,11 @@
     "inheritFrom": [
       "arlac77/template-arlac77-github",
       "arlac77/template-ava-coverage",
+      "arlac77/template-cloudflare",
       "arlac77/template-documentation",
+      "arlac77/template-npm-pkgbuild",
       "arlac77/template-svelte",
       "arlac77/template-testcafe",
-      "arlac77/template-npm-pkgbuild",
-      "arlac77/template-cloudflare",
       "arlac77/template-web-component"
     ]
   }
