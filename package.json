@@ -41,7 +41,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/release-notes-generator": "^12.1.0",
     "@sveltejs/vite-plugin-svelte": "^3.0.2",
-    "ava": "^6.1.0",
+    "ava": "^6.1.1",
     "c8": "^9.1.0",
     "documentation": "^14.0.2",
     "npm-pkgbuild": "^13.0.18",
