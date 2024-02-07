@@ -21,7 +21,6 @@ deployment:
   - netlify.toml
   - _redirects
 rollup:
-  - rollup.config.js
   - rollup.config.mjs
 labels:
   - .github/pr_labeler.yml
