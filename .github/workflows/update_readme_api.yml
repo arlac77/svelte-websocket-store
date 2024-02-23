@@ -15,7 +15,7 @@ jobs:
           node-version: 20.11.1
       - run: npm ci
       - run: npm run docs
-      - uses: gr2m/create-or-update-pull-request-action@v1
+      - uses: gr2m/create-or-update-pull-request-action@v1.9.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
