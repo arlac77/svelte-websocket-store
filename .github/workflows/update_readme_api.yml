@@ -1,5 +1,5 @@
 name: API to readme
-'on':
+on:
   schedule:
     - cron: 31 14 * * 6
   push:
@@ -22,4 +22,4 @@ jobs:
           path: README.md
           title: Sync API into README
           branch: readme-api
-          commit-message: 'docs(README): sync API'
+          commit-message: "docs(README): sync API"
