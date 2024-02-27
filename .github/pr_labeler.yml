@@ -2,7 +2,7 @@ test:
   - tests/**/*
 documentation:
   - docs/**/*
-  - '**/*.md'
+  - "**/*.md"
 dependencies:
   - package-lock.json
   - yarn.lockfile
@@ -29,9 +29,9 @@ vscode:
 openapi:
   - openapi/*
 styling:
-  - '**/*.css'
+  - "**/*.css"
 systemd:
-  - '**/*.service'
-  - '**/*.path'
-  - '**/*.socket'
-  - '**/*.timer'
+  - "**/*.service"
+  - "**/*.path"
+  - "**/*.socket"
+  - "**/*.timer"
