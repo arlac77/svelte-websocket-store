@@ -53,7 +53,8 @@ jobs:
 
           sudo apt-get install ksh curl
 
-          wget https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+          wget
+          https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
 
           sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
       - uses: actions/checkout@v4.1.1
