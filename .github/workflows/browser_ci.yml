@@ -20,7 +20,6 @@ jobs:
         browser:
           - chrome
         node-version:
-          - 20.12.0
           - 20.12.1
     steps:
       - uses: actions/checkout@v4.1.2
