@@ -15,7 +15,7 @@ jobs:
         browser:
           - chrome
     steps:
-      - uses: actions/checkout@v4.1.3
+      - uses: actions/checkout@v4.1.4
       - uses: actions/setup-node@v4.0.2
         with:
           node-version: ${{ matrix.node-version }}
