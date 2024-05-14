@@ -13,7 +13,10 @@ test.beforeEach(async t => {
   t.context.wss = new WebSocketServer({ port });
 });
 
-test.afterEach(t => t.context.wss.close());
+test.afterEach(t => {
+  t.context.wss.close();
+  delete t.context.wss;
+});
 
 test("subscription open close", async t => {
   const store = websocketStore(`ws://localhost:${t.context.port}`);
@@ -99,18 +102,19 @@ test.skip("failing subscription", async t => {
 
 test("should not open a new ws connection if already existing", async t => {
   let counter = 0;
-  t.context.wss.on('connection', () => { counter += 1 })
-  
+  t.context.wss.on("connection", () => {
+    counter += 1;
+  });
+
   const store = websocketStore(`ws://localhost:${t.context.port}`, "INITIAL");
 
-  const unsubscribe = store.subscribe(value => {});
+  const subscription1 = store.subscribe(value => {});
   await wait(300);
-  const anotherUnsubscribe = store.subscribe(value => {});
-  
+  const subscription2 = store.subscribe(value => {});
   await wait(50);
 
-  unsubscribe();
-  anotherUnsubscribe();
+  subscription1();
+  subscription2();
 
-  t.is(counter, 1)
-})
+  t.is(counter, 1, "number of connections opened");
+});
