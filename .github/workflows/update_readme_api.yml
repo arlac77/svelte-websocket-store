@@ -9,7 +9,7 @@ jobs:
   update_readme_api:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.5
+      - uses: actions/checkout@v4.1.6
       - uses: actions/setup-node@v4.0.2
         with:
           node-version: 20.13.1
