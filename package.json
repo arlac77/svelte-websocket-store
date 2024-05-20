@@ -6,12 +6,35 @@
     "provenance": true
   },
   "exports": {
-    ".": "./src/index.mjs",
+    ".": {
+      "0": ".",
+      "1": "/",
+      "2": "s",
+      "3": "r",
+      "4": "c",
+      "5": "/",
+      "6": "i",
+      "7": "n",
+      "8": "d",
+      "9": "e",
+      "10": "x",
+      "11": ".",
+      "12": "m",
+      "13": "j",
+      "14": "s",
+      "svelte": "./src/index.svelte"
+    },
+    "./css": "./src/entitlement.css",
     "./package.json": "./package.json"
   },
   "description": "svelte store with a websocket backend",
   "keywords": [
+    "JWT",
     "component",
+    "log",
+    "router",
+    "session",
+    "spa",
     "store",
     "svelte",
     "vite",
@@ -38,6 +61,11 @@
     "lint:docs": "documentation lint ./src/**/*.mjs",
     "preview": "vite preview"
   },
+  "dependencies": {
+    "svelte-dnd-action": "^0.9.47",
+    "multi-path-matcher": "^4.1.1",
+    "vite-plugin-compression2": "^1.1.0"
+  },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",
@@ -47,12 +75,19 @@
     "ava": "^6.1.3",
     "c8": "^9.1.0",
     "documentation": "^14.0.3",
+    "jsonwebtoken": "^9.0.2",
+    "mf-styling": "^3.1.6",
     "npm-pkgbuild": "^15.3.15",
     "semantic-release": "^23.1.1",
-    "svelte": "^4.2.17",
+    "svelte": "^5.0.0-next.134",
+    "svelte-common": "^6.10.15",
     "testcafe": "^3.6.0",
     "vite": "^5.2.11",
+    "vite-plugin-compression2": "^1.1.0",
     "ws": "^8.17.0"
+  },
+  "peerDependencies": {
+    "svelte": "^4.0.0 || ^5.0.0-next.0"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.6",
@@ -70,6 +105,7 @@
     "content": {
       "${install.dir}": "build/"
     },
+    "api": "api/login",
     "example": true,
     "frontend": true
   },
