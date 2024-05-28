@@ -1,0 +1,10 @@
+seqdiag {
+  router -> transition [label = "/acrticle/1"];
+  transition -> redirect [label = "/login"];
+  transition <- redirect [label = "continue"];
+  router <- transition [label = "continue"];
+  router <- transition [label = "end"];
+}
+
+
+# curl https://kroki.io/seqdiag/svg --data-binary '@transition_and_redirect.seq' > transition_and_redirect.svg
