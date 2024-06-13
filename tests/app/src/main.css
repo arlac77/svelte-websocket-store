@@ -1,0 +1,28 @@
+@import url("mf-styling/src/color-primary-fuchsia.css");
+@import url("mf-styling/src/color.css");
+@import url("mf-styling/src/global.css");
+@import url("mf-styling/src/layout.css");
+@import url("mf-styling/src/table.css");
+@import url("mf-styling/src/button.css");
+@import url("mf-styling/src/form.css");
+
+.key {
+  max-width: 4em;
+  text-align: right;
+}
+
+.value {
+  max-width: 12em;
+}
+
+.user {
+  max-width: 12em;
+}
+
+.password {
+  max-width: 12em;
+}
+
+.result {
+  max-width: 30em;
+}
