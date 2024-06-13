@@ -1,0 +1,4 @@
+seqdiag {
+  router -> transition [label = "/acrticle/1"];
+  router <- transition [label = "end"];
+}
