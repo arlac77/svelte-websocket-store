@@ -1,0 +1,53 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.0//EN" "http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd">
+<svg viewBox="0 0 640 469" xmlns="http://www.w3.org/2000/svg" xmlns:inkspace="http://www.inkscape.org/namespaces/inkscape" xmlns:xlink="http://www.w3.org/1999/xlink" width="640px" height="469px">
+  <defs id="defs_block">
+    <filter height="1.504" id="filter_blur" inkspace:collect="always" width="1.1575" x="-0.07875" y="-0.252">
+      <feGaussianBlur id="feGaussianBlur3780" inkspace:collect="always" stdDeviation="4.2" />
+    </filter>
+  </defs>
+  <title>blockdiag</title>
+  <desc>seqdiag {
+  router -&gt; transition [label = "/acrticle/1"];
+  transition -&gt; redirect [label = "/login"];
+  transition &lt;- redirect [label = "continue"];
+  router &lt;- transition [label = "continue"];
+  router &lt;- transition [label = "end"];
+}
+
+
+# curl https://kroki.io/seqdiag/svg --data-binary '@transition_and_redirect.seq' &gt; transition_and_redirect.svg</desc>
+  <rect fill="rgb(0,0,0)" height="306" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="127" y="141" />
+  <rect fill="rgb(0,0,0)" height="195" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="319" y="141" />
+  <rect fill="rgb(0,0,0)" height="65" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="8" x="511" y="206" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="67" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="259" y="46" />
+  <rect fill="rgb(0,0,0)" height="40" stroke="rgb(0,0,0)" style="filter:url(#filter_blur);opacity:0.7;fill-opacity:1" width="128" x="451" y="46" />
+  <path d="M 128 80 L 128 457" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="306" stroke="rgb(0,0,0)" width="8" x="124" y="135" />
+  <path d="M 320 80 L 320 457" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="195" stroke="rgb(0,0,0)" width="8" x="316" y="135" />
+  <path d="M 512 80 L 512 457" fill="none" stroke="rgb(0,0,0)" stroke-dasharray="8 4" />
+  <rect fill="moccasin" height="65" stroke="rgb(0,0,0)" width="8" x="508" y="200" />
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="64" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="37" x="128.5" y="66">router</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="256" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="61" x="320.5" y="66">transition</text>
+  <rect fill="rgb(255,255,255)" height="40" stroke="rgb(0,0,0)" width="128" x="448" y="40" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="49" x="512.5" y="66">redirect</text>
+  <path d="M 136 135 L 312 135" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="304,131 312,135 304,139" stroke="rgb(0,0,0)" />
+  <path d="M 328 200 L 504 200" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="496,196 504,200 496,204" stroke="rgb(0,0,0)" />
+  <path d="M 328 265 L 504 265" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="336,261 328,265 336,269" stroke="rgb(0,0,0)" />
+  <path d="M 136 330 L 312 330" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="144,326 136,330 144,334" stroke="rgb(0,0,0)" />
+  <path d="M 136 395 L 312 395" fill="none" stroke="rgb(0,0,0)" />
+  <polygon fill="rgb(0,0,0)" points="144,391 136,395 144,399" stroke="rgb(0,0,0)" />
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="67" x="173.5" y="133">/acrticle/1</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="37" x="350.5" y="198">/login</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="49" x="479.5" y="263">continue</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="49" x="287.5" y="328">continue</text>
+  <text fill="rgb(0,0,0)" font-family="sans-serif" font-size="11" font-style="normal" font-weight="normal" text-anchor="middle" textLength="19" x="302.5" y="393">end</text>
+</svg>
