@@ -1,0 +1,9 @@
+
+diagram {
+    group {
+        "/master";
+    }
+    "/master" -> "/:detail";
+}
+
+# curl https://kroki.io/blockdiag/svg --data-binary '@routes.diag' > routes.svg
