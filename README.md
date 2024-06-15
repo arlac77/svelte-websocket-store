@@ -36,8 +36,448 @@ let response = $myStore;
 
 ### Table of Contents
 
-*   [websocketStore](#websocketstore)
+*   [active](#active)
     *   [Parameters](#parameters)
+*   [Key](#key)
+    *   [Properties](#properties)
+*   [BaseRouter](#baserouter)
+    *   [Parameters](#parameters-1)
+    *   [Properties](#properties-1)
+    *   [component](#component)
+    *   [value](#value)
+    *   [path](#path)
+    *   [path](#path-1)
+        *   [Parameters](#parameters-2)
+    *   [replace](#replace)
+        *   [Parameters](#parameters-3)
+    *   [push](#push)
+        *   [Parameters](#parameters-4)
+    *   [finalizePush](#finalizepush)
+        *   [Parameters](#parameters-5)
+    *   [continue](#continue)
+        *   [Parameters](#parameters-6)
+    *   [abort](#abort)
+        *   [Parameters](#parameters-7)
+    *   [subscribe](#subscribe)
+        *   [Parameters](#parameters-8)
+    *   [updateActive](#updateactive)
+        *   [Parameters](#parameters-9)
+    *   [addRoute](#addroute)
+        *   [Parameters](#parameters-10)
+    *   [routeFor](#routefor)
+        *   [Parameters](#parameters-11)
+    *   [pathFor](#pathfor)
+        *   [Parameters](#parameters-12)
+*   [BaseTransition](#basetransition)
+    *   [searchParams](#searchparams)
+    *   [searchParams](#searchparams-1)
+        *   [Parameters](#parameters-13)
+    *   [nest](#nest)
+        *   [Parameters](#parameters-14)
+    *   [continue](#continue-1)
+    *   [abort](#abort-1)
+        *   [Parameters](#parameters-15)
+*   [DetailRoute](#detailroute)
+    *   [Properties](#properties-2)
+    *   [master](#master)
+    *   [first](#first)
+    *   [last](#last)
+    *   [previous](#previous)
+    *   [next](#next)
+*   [Entitlement](#entitlement)
+    *   [Parameters](#parameters-16)
+*   [Guard](#guard)
+    *   [enter](#enter)
+        *   [Parameters](#parameters-17)
+    *   [leave](#leave)
+        *   [Parameters](#parameters-18)
+*   [redirectGuard](#redirectguard)
+    *   [Parameters](#parameters-19)
+*   [sequenceGuard](#sequenceguard)
+    *   [Parameters](#parameters-20)
+*   [parallelGuard](#parallelguard)
+    *   [Parameters](#parameters-21)
+*   [websocketStore](#websocketstore)
+    *   [Parameters](#parameters-22)
+*   [login](#login)
+    *   [Parameters](#parameters-23)
+*   [handleFailedResponse](#handlefailedresponse)
+    *   [Parameters](#parameters-24)
+*   [MasterRoute](#masterroute)
+    *   [Parameters](#parameters-25)
+    *   [Properties](#properties-3)
+*   [nullGuard](#nullguard)
+*   [RootRoute](#rootroute)
+    *   [hasParams](#hasparams)
+    *   [path](#path-2)
+    *   [propertyMapping](#propertymapping)
+    *   [guard](#guard-1)
+*   [SkeletonRoute](#skeletonroute)
+    *   [Parameters](#parameters-26)
+    *   [Properties](#properties-4)
+    *   [enter](#enter-1)
+        *   [Parameters](#parameters-27)
+    *   [leave](#leave-1)
+        *   [Parameters](#parameters-28)
+    *   [isAcceptable](#isacceptable)
+        *   [Parameters](#parameters-29)
+    *   [propertiesFor](#propertiesfor)
+        *   [Parameters](#parameters-30)
+    *   [commonAncestor](#commonancestor)
+        *   [Parameters](#parameters-31)
+    *   [valueFor](#valuefor)
+        *   [Parameters](#parameters-32)
+    *   [value](#value-1)
+    *   [propertyMapping](#propertymapping-1)
+    *   [objectInstance](#objectinstance)
+*   [ValueStoreRoute](#valuestoreroute)
+*   [SessionData](#sessiondata)
+    *   [Properties](#properties-5)
+*   [msecsRequiredForRefresh](#msecsrequiredforrefresh)
+*   [supportedTokenTypes](#supportedtokentypes)
+*   [Session](#session)
+    *   [Parameters](#parameters-33)
+    *   [Properties](#properties-6)
+    *   [update](#update)
+        *   [Parameters](#parameters-34)
+    *   [refresh](#refresh)
+    *   [authorizationHeader](#authorizationheader)
+    *   [isValid](#isvalid)
+    *   [invalidate](#invalidate)
+    *   [hasEntitlement](#hasentitlement)
+        *   [Parameters](#parameters-35)
+    *   [subscribe](#subscribe-1)
+        *   [Parameters](#parameters-36)
+*   [decode](#decode)
+    *   [Parameters](#parameters-37)
+*   [Transition](#transition)
+    *   [Parameters](#parameters-38)
+    *   [Properties](#properties-7)
+    *   [start](#start)
+    *   [end](#end)
+    *   [redirect](#redirect)
+        *   [Parameters](#parameters-39)
+    *   [abort](#abort-2)
+        *   [Parameters](#parameters-40)
+*   [findClosestAttribute](#findclosestattribute)
+    *   [Parameters](#parameters-41)
+*   [dispatchNavigationEvent](#dispatchnavigationevent)
+    *   [Parameters](#parameters-42)
+*   [nameValueStore](#namevaluestore)
+    *   [Parameters](#parameters-43)
+    *   [Properties](#properties-8)
+*   [WaitingGuard](#waitingguard)
+    *   [Parameters](#parameters-44)
+
+## active
+
+*   **See**: {Router.updateActive}
+
+Keeps the node active state in sync.
+
+### Parameters
+
+*   `node` **[Element](https://developer.mozilla.org/docs/Web/API/Element)**&#x20;
+*   `router` **Router**&#x20;
+
+## Key
+
+Keys also act as svelte stores and can be subscribed.
+
+```js
+export const article = derived(
+[articles, router.keys.article],
+([$articles, $id], set) => {
+  set($articles.find(a => a.id === $id));
+  return () => {};
+}
+);
+```
+
+Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+### Properties
+
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `value` **any**&#x20;
+*   `subscriptions` **[Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set)**&#x20;
+
+## BaseRouter
+
+**Extends BaseTransition**
+
+key subscriptions:
+
+```js
+const aKey = router.keys.aKey;
+$aKey // fired if value of aKey changes
+```
+
+### Parameters
+
+*   `routes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<Route>** all managed routes
+*   `base` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url (optional, default `new URL("../",import.meta.url).pathname`)
+
+### Properties
+
+*   `linkNodes` **[Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set)<[Node](https://developer.mozilla.org/docs/Web/API/Node/nextSibling)>** nodes having their active state updated
+*   `routes` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<Route>**&#x20;
+*   `keys` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** collected keys of all routes
+*   `params` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** value mapping from keys (from current route)
+*   `route` **Route** current
+*   `nested` **[Transition](#transition)** ongoing nested transition
+*   `base` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url
+
+### component
+
+Current component.
+Either from a nested transition or from the current route
+
+Returns **SvelteComponent**&#x20;
+
+### value
+
+Value if the current route
+
+Returns **any**&#x20;
+
+### path
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** url path with fragment & query
+
+### path
+
+Replace current route.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+### replace
+
+Replace current route without updating the state.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** former state
+
+### push
+
+Leave current route and enter route for given path.
+The work is done by a Transition.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** where to go
+
+Returns **[Transition](#transition)** running transition
+
+### finalizePush
+
+Called from a Transition to manifest the new destination.
+If path is undefined the Transition has been aborderd.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+### continue
+
+Continue a transition to its original destination.
+Shortcut for this.transition.continue().
+If there is no transition ongoing and a fallbackPath is
+present, it will be entered.
+Otherwise does nothing.
+
+#### Parameters
+
+*   `fallbackPath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+### abort
+
+Abort a transition.
+Shortcut for this.transition.abort()
+If there is no transition ongoing and a fallbackPath is
+present it will be entered.
+Otherwise does nothing.
+
+#### Parameters
+
+*   `fallbackPath` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+### subscribe
+
+Router subscription.
+Changes in the current route will trigger a update
+
+#### Parameters
+
+*   `subscription` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)**&#x20;
+
+### updateActive
+
+Update the active state of a node.
+A node is considered active if it shared the path prefix with the current route.
+
+#### Parameters
+
+*   `node` **[Element](https://developer.mozilla.org/docs/Web/API/Element)**&#x20;
+
+### addRoute
+
+Add a new Route.
+
+#### Parameters
+
+*   `route` **Route**&#x20;
+
+### routeFor
+
+Find Route for a given value.
+
+#### Parameters
+
+*   `value` **any**&#x20;
+
+Returns **Route** able to support given value
+
+### pathFor
+
+Find path for a given value.
+
+#### Parameters
+
+*   `value` **any**&#x20;
+*   `suffix` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** to be appended
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** path + suffix
+
+## BaseTransition
+
+### searchParams
+
+Deliver url search params form the current location.
+
+Returns **URLSearchParams** as extracted from the path
+
+### searchParams
+
+Replaces the search part of the path with the given searchParams.
+
+#### Parameters
+
+*   `searchParams` **(URLSearchParams | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))**&#x20;
+
+### nest
+
+Add another transition nesting level.
+Starts a transition from the given factory.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `factory` **[Transition](#transition)**&#x20;
+
+### continue
+
+Continue a nested route to its original destination.
+Does nothing if the transition has not been nested.
+
+### abort
+
+Abort the transition.
+
+#### Parameters
+
+*   `error` &#x20;
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** truen in case there was a nesten transition
+
+## DetailRoute
+
+**Extends ValueStoreRoute**
+
+Route to represent a slice of the masters list of values.
+
+### Properties
+
+*   `master` **Route** route holding the master records
+
+### master
+
+Route holding the list ov values
+
+Returns **Route** our master
+
+### first
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<any>** 1st. entry
+
+### last
+
+Returns **any** last entry
+
+### previous
+
+Returns **any** previous value
+
+### next
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<any>** next value
+
+## Entitlement
+
+### Parameters
+
+*   `data` **([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object))**&#x20;
+
+## Guard
+
+Enforces conditions of routes
+Like the presents of values in the context
+
+### enter
+
+Called while entering a route (current outlet is not yet set)
+
+#### Parameters
+
+*   `transition` **[Transition](#transition)**&#x20;
+
+### leave
+
+Called before leaving a route
+
+#### Parameters
+
+*   `transition` **[Transition](#transition)**&#x20;
+
+## redirectGuard
+
+Redirects to a given path if condition is met.
+
+### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `condition` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)** redirects when returning true
+
+## sequenceGuard
+
+Execute guards in a sequence.
+
+### Parameters
+
+*   `children` **Iterable<[Guard](#guard)>**&#x20;
+
+## parallelGuard
+
+Execute guards in a parallel.
+
+### Parameters
+
+*   `children` **Iterable<[Guard](#guard)>**&#x20;
 
 ## websocketStore
 
@@ -52,6 +492,390 @@ Keeps socket open (reopens if closed) as long as there are subscriptions.
 *   `socketOptions` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** transparently passed to the WebSocket constructor
 
 Returns **Store**&#x20;
+
+## login
+
+Bring session into the valid state by calling the authorization endpoint
+and asking for a access\_token.
+Executes a POST on the endpoint url expecting username, and password as json
+
+### Parameters
+
+*   `session` **[Session](#session)** to be opened
+*   `endpoint` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** authorization url
+*   `username` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** id of the user
+*   `password` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** user credentials
+*   `tokenmap` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** token names in response to internal known values (optional, default `defaultTokenMap`)
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<([string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String) | [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))>** error message in case of failure or undefined on success
+
+## handleFailedResponse
+
+Extract error description from response.
+
+### Parameters
+
+*   `response` **[Response](https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5)**&#x20;
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
+
+## MasterRoute
+
+**Extends SkeletonRoute**
+
+Route holding a ordered collection of values.
+
+### Parameters
+
+*   `path` &#x20;
+*   `options` &#x20;
+
+### Properties
+
+*   `value` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)\<any>**&#x20;
+
+## nullGuard
+
+Default empty guard does nothing.
+
+## RootRoute
+
+Route at the root of the tree.
+This route has no parent.
+All other routes are below of this one.
+
+### hasParams
+
+Are there parameters in the path.
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if route has parameters (:key)
+
+### path
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** empty as we are the root
+
+### propertyMapping
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** empty object
+
+### guard
+
+Returns **[Guard](#guard)** empty guard which does nothing
+
+## SkeletonRoute
+
+**Extends RootRoute**
+
+Route
+Subscriptions on Routes fire when the route value changes.
+
+### Parameters
+
+*   `path` &#x20;
+*   `options`   (optional, default `{}`)
+
+### Properties
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** full path of the Route including all parents
+*   `component` **SvelteComponent** target to show
+*   `linkComponent` **SvelteComponent** content for [ObjectLink](ObjectLink)
+*   `propertyMapping` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** Map properties to object attributes
+    Keys are the property names and values are the keys in the resulting object.
+*   `priority` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)**&#x20;
+*   `keys` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>** as found in the path
+*   `regex` **RegEx**&#x20;
+*   `value` **any**&#x20;
+
+### enter
+
+Enter the route from a former one.
+All parent routes up to the common ancestor are entered first.
+
+#### Parameters
+
+*   `transition` **[Transition](#transition)**&#x20;
+*   `untilRoute` **Route** the common ancestor with the former route
+
+### leave
+
+Leave the route to a new one.
+All parent routes up to the common ancestor are left.
+
+#### Parameters
+
+*   `transition` **[Transition](#transition)**&#x20;
+*   `untilRoute` **Route** the common ancestor with the future route
+
+### isAcceptable
+
+Check if value and properties are acceptable for the route.
+
+#### Parameters
+
+*   `value` **any** to be placed into route
+*   `properties` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** as presented in the route
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if value can be accepted
+
+### propertiesFor
+
+Extract properties from a value.
+All property values must be strings.
+
+#### Parameters
+
+*   `value` **any** source of the properties
+
+Returns **([Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object) | [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** properties extracted from given value
+
+### commonAncestor
+
+Find common ancestor with an other Route.
+
+#### Parameters
+
+*   `other` **Route**&#x20;
+
+Returns **(Route | [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))** common ancestor Route between receiver and other
+
+### valueFor
+
+Deliver value for a given set of properties of the transition.
+Default implemantation asks the parent route.
+
+#### Parameters
+
+*   `transition` **[Transition](#transition)**&#x20;
+
+Returns **any** for matching properties
+
+### value
+
+Deliver route value.
+Default implemantation asks the parent route.
+
+Returns **any**&#x20;
+
+### propertyMapping
+
+Deliver property mapping.
+Default implemantation asks the parent route.
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** for matching properties
+
+### objectInstance
+
+Default implemantation asks the parent route.
+
+## ValueStoreRoute
+
+**Extends SkeletonRoute**
+
+Route holding a single value
+
+## SessionData
+
+Data as preserved in the backing store.
+
+Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)
+
+### Properties
+
+*   `username` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** user name (id)
+*   `access_token` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** JWT token
+*   `refresh_token` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** JWT token
+
+## msecsRequiredForRefresh
+
+Time required to execute a refresh
+
+Type: [number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)
+
+## supportedTokenTypes
+
+## Session
+
+User session.
+To create as session backed by browser local storage.
+
+```js
+let session = new Session(localStorage);
+```
+
+or by browser session storage
+
+```js
+let session = new Session(sessionStorage);
+```
+
+### Parameters
+
+*   `store` **[SessionData](#sessiondata)**  (optional, default `localStorage`)
+
+### Properties
+
+*   `entitlements` **[Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set)<[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)>**&#x20;
+*   `subscriptions` **[Set](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Set)<[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)>** store subscriptions
+*   `expirationDate` **[Date](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Date)** when the access token expires
+*   `access_token` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** token itself
+*   `refresh_token` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** refresh token
+
+### update
+
+Consume auth response data and reflect internal state.
+
+#### Parameters
+
+*   `data` **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)**&#x20;
+
+### refresh
+
+Refresh with refresh\_token.
+
+Returns **[Promise](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Promise)<[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)>** true if refresh was succcessfull false otherwise
+
+### authorizationHeader
+
+Http header suitable for fetch.
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** header The http header.
+
+Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** header.Authorization The Bearer access token.
+
+### isValid
+
+As long as the expirationTimer is running we must be valid.
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if session is valid (not expired)
+
+### invalidate
+
+Remove all tokens from the session and the backing store.
+
+### hasEntitlement
+
+Check presence of an entitlement.
+
+#### Parameters
+
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** of the entitlement
+
+Returns **[boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** true if the named entitlement is present
+
+### subscribe
+
+Fired when the session changes.
+
+#### Parameters
+
+*   `subscription` **[Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function)**&#x20;
+
+## decode
+
+Extract and decode the payload.
+
+### Parameters
+
+*   `token` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+Returns **[Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object)** payload object
+
+## Transition
+
+**Extends BaseTransition**
+
+Transition between routes.
+
+### Parameters
+
+*   `router` **Router**&#x20;
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** new destination
+
+### Properties
+
+*   `router` **Router**&#x20;
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** new destination
+
+### start
+
+Start the transition
+
+*   leave old route
+*   find matching target route @see matcher()
+*   enter new route
+*   set params
+*   set current route
+
+### end
+
+*   **See**: Router.finalizePush
+
+Cleanup transition.
+Update Nodes active state
+
+### redirect
+
+Halt current transition and go to another route.
+To proceed with the original route call [continue()](continue\(\))
+The original transition will keept in place and can be continued afterwards.
+
+#### Parameters
+
+*   `path` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** new route to enter temporary
+
+### abort
+
+Bring back the router into the state before the transition has started.
+All nested transitions also will be termniated.
+
+#### Parameters
+
+*   `e` **(Exception | [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**&#x20;
+
+## findClosestAttribute
+
+Walks up the dom tree parents unti a node with a given attribute is found or the root node is reached.
+
+### Parameters
+
+*   `element` **[Element](https://developer.mozilla.org/docs/Web/API/Element)**&#x20;
+*   `attributeName` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+
+Returns **([Element](https://developer.mozilla.org/docs/Web/API/Element) | [undefined](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/undefined))**&#x20;
+
+## dispatchNavigationEvent
+
+Dispatches a NAVIGATION\_EVENT with pathname and hash
+
+### Parameters
+
+*   `event` **[Event](https://developer.mozilla.org/docs/Web/API/Event)**&#x20;
+
+## nameValueStore
+
+Create a named object which also acts as a store.
+
+### Parameters
+
+*   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)**&#x20;
+*   `value` **any** initial value
+
+### Properties
+
+*   `value` **any**&#x20;
+
+Returns **Store**&#x20;
+
+## WaitingGuard
+
+**Extends Guard**
+
+Shows a component during transition.
+
+### Parameters
+
+*   `component` **SvelteComponent** to show up during th transition
+*   `rampUpTime` **[number](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number)** initial delay for the componnt to show up (optional, default `300`)
 
 # install
 
