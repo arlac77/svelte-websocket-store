@@ -91,7 +91,7 @@
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.6",
-    "mf-hosting-frontend": "^3.2.1"
+    "mf-hosting-frontend": "^3.2.2"
   },
   "repository": {
     "type": "git",
