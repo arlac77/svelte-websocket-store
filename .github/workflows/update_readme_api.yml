@@ -4,22 +4,27 @@ on:
     - cron: 31 14 * * 6
   push:
     paths:
-      - src/*
+      - "src/*"
+  workflow_dispatch:
 jobs:
   update_readme_api:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4.1.7
-      - uses: actions/setup-node@v4.0.3
+      - name: checkout
+        uses: actions/checkout@v4.1.7
+      - name: prepare node
+        uses: actions/setup-node@v4.0.3
         with:
           node-version: 22.6.0
-      - run: npm ci
-      - run: npm run docs
+      - name: install
+        run: npm ci
+      - name: run docs
+        run: npm run docs
       - uses: gr2m/create-or-update-pull-request-action@v1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: README.md
-          title: Sync API into README
-          branch: readme-api
+          path: "README.md"
+          title: "Sync API into README"
+          branch: "readme-api"
           commit-message: "docs(README): sync API"
