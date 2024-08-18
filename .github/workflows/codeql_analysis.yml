@@ -1,5 +1,5 @@
 name: CodeQL
-"on":
+on:
   push:
     branches:
       - master
@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v4.1.7
       - name: git checkout
         run: git checkout
-        if: "${{ github.event_name == 'pull_request' }}"
+        if: ${{ github.event_name == 'pull_request' }}
       - name: initialize CodeQL
         uses: github/codeql-action/init@v3
         with:
@@ -24,7 +24,7 @@ jobs:
         uses: actions/setup-node@v4.0.3
         with:
           node-version: 22.6.0
-          cache: "npm"
+          cache: npm
       - name: install
         run: npm ci
       - name: perform CodeQL analysis
