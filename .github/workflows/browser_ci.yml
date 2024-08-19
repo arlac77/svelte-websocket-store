@@ -78,7 +78,8 @@ jobs:
           cache: npm
           cache-dependency-path: package-lock.json
       - run: npm ci
-      - run: npx semantic-release
+      - name: release
+        run: npx semantic-release
         env:
           CI: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
