@@ -4,8 +4,7 @@ on:
     - cron: 31 14 * * 6
   push:
     paths:
-      - "src/*"
-  workflow_dispatch:
+      - src/*
 jobs:
   update_readme_api:
     runs-on: ubuntu-latest
@@ -24,7 +23,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          path: "README.md"
-          title: "Sync API into README"
-          branch: "readme-api"
+          path: README.md
+          title: Sync API into README
+          branch: readme-api
           commit-message: "docs(README): sync API"
