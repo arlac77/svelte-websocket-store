@@ -69,7 +69,7 @@
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",
-    "@semantic-release/github": "^10.1.6",
+    "@semantic-release/github": "^10.1.7",
     "@semantic-release/release-notes-generator": "^14.0.1",
     "@sveltejs/vite-plugin-svelte": "^3.1.1",
     "ava": "^6.1.3",
