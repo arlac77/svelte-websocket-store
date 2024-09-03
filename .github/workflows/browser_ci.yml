@@ -20,7 +20,7 @@ jobs:
         browser:
           - chrome
         node-version:
-          - 22.7.0
+          - 22.8.0
     steps:
       - name: checkout
         uses: actions/checkout@v4.1.7
@@ -72,7 +72,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v4.0.3
         with:
-          node-version: 22.7.0
+          node-version: 22.8.0
           cache: npm
           cache-dependency-path: package-lock.json
       - name: install
