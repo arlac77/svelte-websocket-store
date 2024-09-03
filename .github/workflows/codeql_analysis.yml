@@ -23,7 +23,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v4.0.3
         with:
-          node-version: 22.7.0
+          node-version: 22.8.0
           cache: npm
       - name: install
         run: npm ci
