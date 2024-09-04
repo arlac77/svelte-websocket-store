@@ -71,7 +71,7 @@
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/github": "^10.3.2",
     "@semantic-release/release-notes-generator": "^14.0.1",
-    "@sveltejs/vite-plugin-svelte": "^4.0.0-next.6",
+    "@sveltejs/vite-plugin-svelte": "^4.0.0-next.7",
     "ava": "^6.1.3",
     "c8": "^10.1.2",
     "documentation": "^14.0.3",
