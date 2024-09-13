@@ -79,10 +79,10 @@
     "mf-styling": "^3.1.9",
     "npm-pkgbuild": "^15.3.32",
     "semantic-release": "^24.1.1",
-    "svelte": "^5.0.0-next.244",
+    "svelte": "^5.0.0-next.245",
     "svelte-common": "^6.15.6",
     "testcafe": "^3.6.2",
-    "vite": "^5.4.4",
+    "vite": "^5.4.5",
     "vite-plugin-compression2": "^1.3.0",
     "ws": "^8.18.0"
   },
