@@ -80,7 +80,7 @@
     "npm-pkgbuild": "^15.3.35",
     "semantic-release": "^24.1.1",
     "svelte": "^5.0.0-next.257",
-    "svelte-common": "^6.15.7",
+    "svelte-common": "^6.15.8",
     "testcafe": "^3.6.2",
     "vite": "^5.4.7",
     "vite-plugin-compression2": "^1.3.0",
@@ -91,7 +91,7 @@
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.7",
-    "mf-hosting-frontend": "^3.2.4"
+    "mf-hosting-frontend": "^3.3.1"
   },
   "repository": {
     "type": "git",
