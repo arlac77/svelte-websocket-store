@@ -76,7 +76,7 @@
     "c8": "^10.1.2",
     "documentation": "^14.0.3",
     "jsonwebtoken": "^9.0.2",
-    "mf-styling": "^3.2.0",
+    "mf-styling": "^3.2.1",
     "npm-pkgbuild": "^15.5.2",
     "semantic-release": "^24.1.1",
     "svelte": "^5.0.0-next.258",
