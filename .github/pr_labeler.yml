@@ -1,39 +1,74 @@
-test:
-  - tests/**/*
-documentation:
-  - docs/**/*
-  - "**/*.md"
-dependencies:
-  - package-lock.json
-  - yarn.lockfile
 ci:
-  - .github/workflows/*
-  - .travis.yml
-github:
-  - .github/**/*
-git:
-  - .gitignore
-npm:
-  - .npmignore
-  - package.json
-  - package-lock.json
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/workflows/*"
+          - .travis.yml
+
+dependencies:
+  - changed-files:
+      - any-glob-to-any-file:
+          - package-lock.json
+          - yarn.lockfile
+
 deployment:
-  - netlify.toml
-  - _redirects
-rollup:
-  - rollup.config.mjs
+  - changed-files:
+      - any-glob-to-any-file:
+          - netlify.toml
+          - _redirects
+
+documentation:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "docs/**/*"
+          - "**/*.md"
+
+github:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".github/**/*"
+
+git:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .gitignore
+
 labels:
-  - .github/pr_labeler.yml
-vscode:
-  - .vscode/*
-openapi:
-  - openapi/*
-styling:
-  - "**/*.css"
-systemd:
-  - "**/*.service"
-  - "**/*.path"
-  - "**/*.socket"
-  - "**/*.timer"
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/pr_labeler.yml
+
 lint:
-  - .stylelintrc.json
+  - changed-files:
+      - any-glob-to-any-file:
+          - .stylelintrc.json
+
+npm:
+  - changed-files:
+      - any-glob-to-any-file:
+          - .npmignore
+          - package.json
+          - package-lock.json
+
+openapi:
+  - changed-files:
+      - any-glob-to-any-file:
+          - openapi/*
+
+rollup:
+  - changed-files:
+      - any-glob-to-any-file:
+          - rollup.config.mjs
+
+styling:
+  - changed-files:
+      - any-glob-to-any-file:
+          - "**/*.css"
+
+test:
+  - changed-files:
+      - any-glob-to-any-file: "tests/**/*"
+
+vscode:
+  - changed-files:
+      - any-glob-to-any-file:
+          - ".vscode/*"
