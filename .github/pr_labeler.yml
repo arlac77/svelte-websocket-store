@@ -1,74 +1,61 @@
 ci:
   - changed-files:
       - any-glob-to-any-file:
-          - ".github/workflows/*"
+          - .github/workflows/*
           - .travis.yml
-
 dependencies:
   - changed-files:
       - any-glob-to-any-file:
           - package-lock.json
           - yarn.lockfile
-
 deployment:
   - changed-files:
       - any-glob-to-any-file:
           - netlify.toml
           - _redirects
-
 documentation:
   - changed-files:
       - any-glob-to-any-file:
-          - "docs/**/*"
+          - docs/**/*
           - "**/*.md"
-
 github:
   - changed-files:
       - any-glob-to-any-file:
-          - ".github/**/*"
-
+          - .github/**/*
 git:
   - changed-files:
       - any-glob-to-any-file:
           - .gitignore
-
 labels:
   - changed-files:
       - any-glob-to-any-file:
           - .github/pr_labeler.yml
-
 lint:
   - changed-files:
       - any-glob-to-any-file:
           - .stylelintrc.json
-
 npm:
   - changed-files:
       - any-glob-to-any-file:
           - .npmignore
           - package.json
           - package-lock.json
-
 openapi:
   - changed-files:
       - any-glob-to-any-file:
           - openapi/*
-
 rollup:
   - changed-files:
       - any-glob-to-any-file:
           - rollup.config.mjs
-
 styling:
   - changed-files:
       - any-glob-to-any-file:
           - "**/*.css"
-
 test:
   - changed-files:
-      - any-glob-to-any-file: "tests/**/*"
-
+      - any-glob-to-any-file: tests/**/*
 vscode:
   - changed-files:
       - any-glob-to-any-file:
-          - ".vscode/*"
+          - .vscode/*
