@@ -16,7 +16,7 @@ jobs:
           - chrome
     steps:
       - name: checkout
-        uses: actions/checkout@v4.2.0
+        uses: actions/checkout@v4.2.1
       - name: prepare node
         uses: actions/setup-node@v4.0.4
         with:
