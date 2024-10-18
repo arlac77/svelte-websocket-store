@@ -1,8 +1,5 @@
 [![Svelte v5](https://img.shields.io/badge/svelte-v5-orange.svg)](https://svelte.dev)
-[![npm](https://img.shields.io/npm/v/svelte-websocket-store.svg)](https://www.npmjs.com/package/svelte-websocket-store)
 [![License](https://img.shields.io/badge/License-BSD%203--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)
-[![bundlejs](https://deno.bundlejs.com/?q=svelte-websocket-store\&badge=detailed)](https://bundlejs.com/?q=svelte-websocket-store)
-[![downloads](http://img.shields.io/npm/dm/svelte-websocket-store.svg?style=flat-square)](https://npmjs.org/package/svelte-websocket-store)
 [![GitHub Issues](https://img.shields.io/github/issues/arlac77/svelte-websocket-store.svg?style=flat-square)](https://github.com/arlac77/svelte-websocket-store/issues)
 [![Build Status](https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Farlac77%2Fsvelte-websocket-store%2Fbadge\&style=flat)](https://actions-badge.atrox.dev/arlac77/svelte-websocket-store/goto)
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
