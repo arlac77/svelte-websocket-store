@@ -80,7 +80,7 @@
     "npm-pkgbuild": "^15.6.8",
     "semantic-release": "^24.2.0",
     "svelte": "^5.2.3",
-    "svelte-common": "^6.15.30",
+    "svelte-common": "^6.15.31",
     "testcafe": "^3.7.0",
     "vite": "^5.4.11",
     "vite-plugin-compression2": "^1.3.1",
