@@ -70,7 +70,7 @@
     "@semantic-release/commit-analyzer": "^13.0.0",
     "@semantic-release/exec": "^6.0.3",
     "@semantic-release/github": "^11.0.1",
-    "@semantic-release/release-notes-generator": "^14.0.1",
+    "@semantic-release/release-notes-generator": "^14.0.2",
     "@sveltejs/vite-plugin-svelte": "^5.0.2",
     "ava": "^6.2.0",
     "c8": "^10.1.3",
