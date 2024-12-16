@@ -79,7 +79,7 @@
     "mf-styling": "^3.2.6",
     "npm-pkgbuild": "^15.6.11",
     "semantic-release": "^24.2.0",
-    "svelte": "^5.14.0",
+    "svelte": "^5.14.1",
     "svelte-common": "^6.15.46",
     "testcafe": "^3.7.0",
     "vite": "^6.0.3",
