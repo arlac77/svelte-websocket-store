@@ -82,7 +82,7 @@
     "svelte": "^5.15.0",
     "svelte-common": "^6.15.52",
     "testcafe": "^3.7.1",
-    "vite": "^6.0.4",
+    "vite": "^6.0.5",
     "vite-plugin-compression2": "^1.3.3",
     "ws": "^8.18.0"
   },
