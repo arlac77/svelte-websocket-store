@@ -56,9 +56,9 @@
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
-    "docs": "documentation readme --section=API ./src/**/*.mjs",
+    "docs": "documentation readme --section=API ./src/**/*.mjs && documentation readme --section=API ./src**/*.mjs",
     "lint": "node --run lint:docs",
-    "lint:docs": "documentation lint ./src/**/*.mjs",
+    "lint:docs": "documentation lint ./src**/*.mjs",
     "preview": "vite preview"
   },
   "dependencies": {
