@@ -78,7 +78,7 @@
     "jsonwebtoken": "^9.0.2",
     "mf-styling": "^3.2.10",
     "npm-pkgbuild": "^15.6.11",
-    "semantic-release": "^24.2.1",
+    "semantic-release": "^24.2.2",
     "svelte": "^5.19.9",
     "svelte-common": "^6.15.64",
     "testcafe": "^3.7.1",
