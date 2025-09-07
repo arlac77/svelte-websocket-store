@@ -5,6 +5,7 @@
     "access": "public",
     "provenance": true
   },
+  "packageManager": "npm@11.6.0+sha512.77f3fb0dbbd881835d7bd1217deabdf7ed77fc4ec4f363df64fc3cb986404abf6c437661041080f5c5d225103508e7c9ea30cb2742b7e942675d05a10af2d7b9",
   "exports": {
     ".": {
       "0": ".",
@@ -77,7 +78,7 @@
     "documentation": "^14.0.3",
     "jsonwebtoken": "^9.0.2",
     "mf-styling": "^3.2.13",
-    "npm-pkgbuild": "^18.2.26",
+    "npm-pkgbuild": "^18.2.27",
     "semantic-release": "^24.2.7",
     "svelte": "^5.38.7",
     "svelte-common": "^6.19.33",
