@@ -27,3 +27,6 @@ jobs:
           title: Sync API into README
           branch: readme-api
           commit-message: "docs(README): sync API"
+    permissions:
+      contents: write
+      pull-requests: write
