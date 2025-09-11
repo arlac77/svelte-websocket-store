@@ -70,7 +70,7 @@
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
-    "@semantic-release/github": "^11.0.5",
+    "@semantic-release/github": "^11.0.6",
     "@semantic-release/release-notes-generator": "^14.1.0",
     "@sveltejs/vite-plugin-svelte": "^6.2.0",
     "ava": "^6.4.1",
@@ -80,7 +80,7 @@
     "mf-styling": "^3.2.13",
     "npm-pkgbuild": "^18.2.29",
     "semantic-release": "^24.2.8",
-    "svelte": "^5.38.8",
+    "svelte": "^5.38.10",
     "svelte-common": "^6.19.33",
     "testcafe": "^3.7.2",
     "vite": "^7.1.5",
