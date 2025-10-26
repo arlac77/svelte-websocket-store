@@ -65,7 +65,7 @@
   "dependencies": {
     "multi-path-matcher": "^4.1.6",
     "svelte-dnd-action": "^0.9.49",
-    "vite-plugin-compression2": "^2.3.0"
+    "vite-plugin-compression2": "^2.3.1"
   },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^13.0.1",
@@ -84,7 +84,7 @@
     "svelte-common": "^6.19.33",
     "testcafe": "^3.7.2",
     "vite": "^7.1.12",
-    "vite-plugin-compression2": "^2.3.0",
+    "vite-plugin-compression2": "^2.3.1",
     "ws": "^8.18.3"
   },
   "peerDependencies": {
