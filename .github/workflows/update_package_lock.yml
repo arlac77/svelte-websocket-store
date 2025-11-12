@@ -8,19 +8,13 @@ on:
 jobs:
   update_package_lock:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version:
-          - 24.11.0
-        browser:
-          - chrome
     steps:
       - name: checkout
         uses: actions/checkout@v5.0.0
       - name: prepare node
         uses: actions/setup-node@v6.0.0
         with:
-          node-version: ${{ matrix.node-version }}
+          node-version: 24.11.1
       - name: remove lock
         run: rm package-lock.json
       - name: install playwright
@@ -28,7 +22,7 @@ jobs:
       - name: test
         run: npm install-test
         env:
-          BROWSER: ${{ matrix.browser }}
+          BROWSER: chrome
       - name: create pull request
         uses: gr2m/create-or-update-pull-request-action@v1.10.1
         env:
