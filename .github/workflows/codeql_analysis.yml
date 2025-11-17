@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
-        uses: actions/checkout@v5.0.0
+        uses: actions/checkout@v5.0.1
       - name: git checkout
         run: git checkout
         if: ${{ github.event_name == 'pull_request' }}
