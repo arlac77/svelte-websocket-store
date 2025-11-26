@@ -63,7 +63,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "multi-path-matcher": "^4.1.6",
+    "multi-path-matcher": "^4.1.7",
     "svelte-dnd-action": "^0.9.49",
     "vite-plugin-compression2": "^2.3.1"
   },
