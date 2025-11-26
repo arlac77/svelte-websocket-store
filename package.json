@@ -80,7 +80,7 @@
     "mf-styling": "^3.2.16",
     "npm-pkgbuild": "^19.0.4",
     "semantic-release": "^25.0.2",
-    "svelte": "^5.44.0",
+    "svelte": "^5.45.2",
     "svelte-common": "^6.19.33",
     "testcafe": "^3.7.2",
     "vite": "^7.2.4",
@@ -101,7 +101,7 @@
   "bugs": {
     "url": "https://github.com/arlac77/svelte-websocket-store/issues"
   },
-  "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
+  "homepage": "",
   "pkgbuild": {
     "content": {
       "${install.dir}": "build/"
