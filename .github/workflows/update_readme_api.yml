@@ -12,7 +12,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v6.0.1
       - name: prepare node
-        uses: actions/setup-node@v6.0.0
+        uses: actions/setup-node@v6.1.0
         with:
           node-version: 24.11.1
       - name: install
