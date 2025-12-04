@@ -76,7 +76,7 @@
     "ava": "^6.4.1",
     "c8": "^10.1.3",
     "documentation": "^14.0.3",
-    "jsonwebtoken": "^9.0.2",
+    "jsonwebtoken": "^9.0.3",
     "mf-styling": "^3.2.16",
     "npm-pkgbuild": "^19.0.7",
     "semantic-release": "^25.0.2",
