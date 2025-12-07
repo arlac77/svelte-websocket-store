@@ -3,9 +3,11 @@ on:
   push:
     branches:
       - master
+      - next
   pull_request:
     branches:
       - master
+      - next
 jobs:
   analyze:
     name: Analyze
@@ -16,14 +18,14 @@ jobs:
       - name: git checkout
         run: git checkout
         if: ${{ github.event_name == 'pull_request' }}
-      - name: prepare CodeQL
-        uses: github/codeql-action/init@v4
-        with:
-          languages: javascript
       - name: prepare node
         uses: actions/setup-node@v6.1.0
         with:
           node-version: 24.11.1
+      - name: prepare CodeQL
+        uses: github/codeql-action/init@v4
+        with:
+          languages: javascript
       - name: install
         run: npm ci
       - name: perform CodeQL analysis
