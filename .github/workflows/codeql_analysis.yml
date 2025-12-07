@@ -16,7 +16,7 @@ jobs:
       - name: git checkout
         run: git checkout
         if: ${{ github.event_name == 'pull_request' }}
-      - name: initialize CodeQL
+      - name: prepare CodeQL
         uses: github/codeql-action/init@v4
         with:
           languages: javascript
