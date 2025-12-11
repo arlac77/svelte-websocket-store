@@ -10,14 +10,15 @@ on:
       - next
 permissions:
   contents: read
+  id-token: write
 jobs:
   test-node:
     runs-on: ubuntu-latest
+    timeout-minutes: 60
     strategy:
       matrix:
         node-version:
-          - 22.17.1
-          - 24.5.0
+          - 24.12.0
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.1
@@ -27,6 +28,17 @@ jobs:
           node-version: ${{ matrix.node-version }}
       - name: install
         run: npm ci
+      - name: install playwright
+        run: npx playwright install --with-deps
+      - name: install npm
+        run: npm cit
+      - name: upload test report
+        uses: actions/upload-artifact@v5
+        with:
+          name: test-report
+          path: ${{ github.workspace }}/playwright-report/**/*
+          retention-days: 30
+        if: ${{ !cancelled() }}
       - name: test and coverage
         run: npm run cover --if-present
       - name: coveralls
@@ -51,15 +63,28 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v6.1.0
         with:
-          node-version: 22.17.1
+          node-version:
+            - 22.17.1
+            - 24.12.0
       - name: install
         run: npm ci
+      - name: install dependencies
+        run: |
+          if [ ! -f /usr/bin/pacman ]
+          then
+          sudo apt-get update
+          sudo apt-get install ksh curl
+          wget https://github.com/ThePoorPilot/pacman-utils/releases/download/5.2.2-3_2.31-0/pacman-utils_5.2.2-3_amd64.deb
+          sudo apt-get install -f ./pacman-utils_5.2.2-3_amd64.deb
+          fi
       - name: release
         run: npx semantic-release
         env:
           CI: "true"
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PKGBUILD_PUBLISH: ${{ secrets.PKGBUILD_PUBLISH }}
+          PKGEXT: .pkg.tar.xz
   finish:
     needs:
       - test-node
