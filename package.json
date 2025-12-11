@@ -8,37 +8,15 @@
   "packageManager": "npm@11.6.4+sha512.1118cab46a05a50aee6bff5b1b4fa1df18afff89d57465620a3518035026955db87c5bdf9d207b07b7487d99f2490d450cb774655ad63ec2cba7bf1d0ad25d45",
   "exports": {
     ".": {
-      "0": ".",
-      "1": "/",
-      "2": "s",
-      "3": "r",
-      "4": "c",
-      "5": "/",
-      "6": "i",
-      "7": "n",
-      "8": "d",
-      "9": "e",
-      "10": "x",
-      "11": ".",
-      "12": "m",
-      "13": "j",
-      "14": "s",
       "svelte": "./src/index.svelte"
     },
-    "./css": "./src/entitlement.css",
     "./package.json": "./package.json"
   },
   "description": "svelte store with a websocket backend",
   "keywords": [
     "JWT",
     "component",
-    "log",
-    "router",
-    "session",
-    "spa",
-    "store",
     "svelte",
-    "vite",
     "web",
     "websocket"
   ],
@@ -63,11 +41,9 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "multi-path-matcher": "^4.1.7",
-    "svelte-dnd-action": "^0.9.49",
-    "vite-plugin-compression2": "^2.4.0"
   },
   "devDependencies": {
+    "vite-plugin-compression2": "^2.4.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.2",
@@ -82,13 +58,11 @@
     "semantic-release": "^25.0.2",
     "svelte": "^5.45.8",
     "svelte-common": "^6.19.34",
-    "testcafe": "^3.7.2",
     "vite": "^7.2.7",
-    "vite-plugin-compression2": "^2.4.0",
     "ws": "^8.18.3"
   },
   "peerDependencies": {
-    "svelte": "^5.0.0-next.0"
+    "svelte": "^5.45.0"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^1.0.9",
@@ -166,7 +140,6 @@
       "arlac77/template-documentation",
       "arlac77/template-npm-pkgbuild",
       "arlac77/template-svelte",
-      "arlac77/template-testcafe",
       "arlac77/template-web-component"
     ]
   }
