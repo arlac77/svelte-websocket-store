@@ -17,6 +17,7 @@
     "JWT",
     "component",
     "svelte",
+    "vite",
     "web",
     "websocket"
   ],
@@ -31,19 +32,18 @@
     "prepare": "node --run prepare:vite",
     "prepare:vite": "vite build",
     "start": "vite",
-    "test": "node --run test:ava && node --run test:cafe",
+    "test": "node --run test:ava && node --run test:cafe && node --run test:playwright",
     "test:cafe": "testcafe $BROWSER:headless tests/cafe/*-cafe.mjs --esm -s build/test --page-request-timeout 5000 --app-init-delay 8000 --app vite",
     "test:ava": "ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs",
+    "test:playwright": "npx playwright test",
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src**/*.mjs",
     "lint": "node --run lint:docs",
     "lint:docs": "documentation lint ./src**/*.mjs",
     "preview": "vite preview"
   },
-  "dependencies": {
-  },
   "devDependencies": {
-    "vite-plugin-compression2": "^2.4.0",
+    "@playwright/test": "^1.57.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.2",
@@ -55,10 +55,12 @@
     "jsonwebtoken": "^9.0.3",
     "mf-styling": "^3.2.20",
     "npm-pkgbuild": "^19.1.0",
+    "playwright": "^1.57.0",
     "semantic-release": "^25.0.2",
     "svelte": "^5.45.8",
     "svelte-common": "^6.19.34",
     "vite": "^7.2.7",
+    "vite-plugin-compression2": "^2.4.0",
     "ws": "^8.18.3"
   },
   "peerDependencies": {
@@ -139,6 +141,7 @@
       "arlac77/template-cloudflare",
       "arlac77/template-documentation",
       "arlac77/template-npm-pkgbuild",
+      "arlac77/template-playwright",
       "arlac77/template-svelte",
       "arlac77/template-web-component"
     ]
