@@ -8,7 +8,7 @@
 [![Styled with prettier](https://img.shields.io/badge/styled_with-prettier-ff69b4.svg)](https://github.com/prettier/prettier)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/svelte-websocket-store/badge.svg)](https://snyk.io/test/github/arlac77/svelte-websocket-store)
-[![Tested with TestCafe](https://img.shields.io/badge/tested%20with-TestCafe-2fa4cf.svg)](https://github.com/DevExpress/testcafe)
+[![Tested with playwright](https://img.shields.io/badge/tested%20with-playwright-2fa4cf.svg)](https://playwright.dev)
 
 # svelte-websocket-store
 
