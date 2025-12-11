@@ -7,7 +7,14 @@ doc
 .github
 .node-version
 jsconfig.json
+playwright.config.js
 pkg
 vite.config.mts
 dist
 netlify.toml
+.last-run.json
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/playwright/.auth/
