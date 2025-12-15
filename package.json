@@ -51,7 +51,7 @@
     "ava": "^6.4.1",
     "c8": "^10.1.3",
     "documentation": "^14.0.3",
-    "mf-styling": "^3.2.20",
+    "mf-styling": "^3.2.24",
     "npm-pkgbuild": "^19.1.2",
     "playwright": "^1.57.0",
     "semantic-release": "^25.0.2",
