@@ -65,8 +65,8 @@
     "svelte": "^5.45.8"
   },
   "optionalDependencies": {
-    "mf-hosting-cloudflare": "^1.0.9",
-    "mf-hosting-frontend": "^3.9.11"
+    "mf-hosting-cloudflare": "^1.0.10",
+    "mf-hosting-frontend": "^3.9.12"
   },
   "repository": {
     "type": "git",
