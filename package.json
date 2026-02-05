@@ -56,7 +56,7 @@
     "playwright": "^1.58.1",
     "semantic-release": "^25.0.3",
     "svelte": "^5.49.2",
-    "svelte-common": "^6.19.66",
+    "svelte-common": "^6.19.67",
     "vite": "^7.3.1",
     "vite-plugin-compression2": "^2.4.0",
     "ws": "^8.19.0"
@@ -65,8 +65,8 @@
     "svelte": "^5.45.8"
   },
   "optionalDependencies": {
-    "mf-hosting-cloudflare": "^1.0.10",
-    "mf-hosting-frontend": "^3.9.12"
+    "mf-hosting-cloudflare": "^2.0.0",
+    "mf-hosting-frontend": "^4.0.0"
   },
   "repository": {
     "type": "git",
