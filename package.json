@@ -5,7 +5,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "npm@11.6.4+sha512.1118cab46a05a50aee6bff5b1b4fa1df18afff89d57465620a3518035026955db87c5bdf9d207b07b7487d99f2490d450cb774655ad63ec2cba7bf1d0ad25d45",
+  "packageManager": "npm@11.9.0+sha512.04166853ddba142ca98f86fb57b1258a7c6c59ccb82acb3cf141b77a315898acaaed47395e74f7e0c7b69c486008e68be6a6381ef1aee5a23dd82e0e61decd68",
   "exports": {
     ".": {
       "default": "./src/index.mjs"
