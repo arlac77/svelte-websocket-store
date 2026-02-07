@@ -78,7 +78,7 @@
   "homepage": "https://github.com/arlac77/svelte-websocket-store#readme",
   "pkgbuild": {
     "content": {
-      "${install.dir}": "build/"
+      "${install_dir}": "build/"
     },
     "api": "api/login",
     "example": true,
