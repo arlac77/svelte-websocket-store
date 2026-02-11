@@ -5,7 +5,7 @@
     "access": "public",
     "provenance": true
   },
-  "packageManager": "npm@11.9.0+sha512.04166853ddba142ca98f86fb57b1258a7c6c59ccb82acb3cf141b77a315898acaaed47395e74f7e0c7b69c486008e68be6a6381ef1aee5a23dd82e0e61decd68",
+  "packageManager": "npm@11.10.0+sha512.8bc844e37892200305b98562f13c6c10849d10b3387c8cdaeb4d1a2e32746a79063cba9dd284cf28c26a01c3bf4169b7d3b31b4a5586cc970d6749463108073c",
   "exports": {
     ".": {
       "default": "./src/index.mjs"
@@ -55,7 +55,7 @@
     "npm-pkgbuild": "^20.6.1",
     "playwright": "^1.58.2",
     "semantic-release": "^25.0.3",
-    "svelte": "^5.50.1",
+    "svelte": "^5.50.2",
     "svelte-common": "^6.19.68",
     "vite": "^7.3.1",
     "vite-plugin-compression2": "^2.4.0",
