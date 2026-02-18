@@ -55,7 +55,7 @@
     "npm-pkgbuild": "^20.6.3",
     "playwright": "^1.58.2",
     "semantic-release": "^25.0.3",
-    "svelte": "^5.51.0",
+    "svelte": "^5.51.4",
     "svelte-common": "^6.19.72",
     "vite": "^7.3.1",
     "vite-plugin-compression2": "^2.4.0",
