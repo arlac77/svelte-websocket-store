@@ -38,7 +38,7 @@ jobs:
       - name: test and coverage
         run: npm run cover --if-present
       - name: upload test report
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-report
           path: ${{ github.workspace }}/playwright-report/**/*
