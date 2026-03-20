@@ -56,7 +56,7 @@
     "playwright": "^1.58.2",
     "semantic-release": "^25.0.3",
     "svelte": "^5.54.0",
-    "svelte-common": "^6.19.79",
+    "svelte-common": "^6.19.80",
     "vite": "^8.0.1",
     "vite-plugin-compression2": "^2.5.1",
     "ws": "^8.19.0"
