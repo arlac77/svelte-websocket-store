@@ -42,7 +42,7 @@
     "preview": "vite preview"
   },
   "devDependencies": {
-    "@playwright/test": "^1.58.2",
+    "@playwright/test": "^1.59.0",
     "@semantic-release/commit-analyzer": "^13.0.1",
     "@semantic-release/exec": "^7.1.0",
     "@semantic-release/github": "^12.0.6",
@@ -53,9 +53,9 @@
     "documentation": "^14.0.3",
     "mf-styling": "^3.3.14",
     "npm-pkgbuild": "^20.6.4",
-    "playwright": "^1.58.2",
+    "playwright": "^1.59.0",
     "semantic-release": "^25.0.3",
-    "svelte": "^5.55.0",
+    "svelte": "^5.55.1",
     "svelte-common": "^6.19.80",
     "vite": "^8.0.3",
     "vite-plugin-compression2": "^2.5.3",
