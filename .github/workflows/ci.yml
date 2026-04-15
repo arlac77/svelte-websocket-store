@@ -21,6 +21,7 @@ jobs:
           - ubuntu-latest
         node-version:
           - 24.14.0
+          - 24.14.1
     steps:
       - name: checkout
         uses: actions/checkout@v6.0.2
@@ -66,7 +67,7 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v6.3.0
         with:
-          node-version: 24.14.0
+          node-version: 24.14.1
       - name: install
         run: npm ci
       - name: install dependencies
