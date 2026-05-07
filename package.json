@@ -57,7 +57,7 @@
     "semantic-release": "^25.0.3",
     "svelte": "^5.55.5",
     "svelte-common": "^6.19.80",
-    "vite": "^8.0.10",
+    "vite": "^8.0.11",
     "vite-plugin-compression2": "^2.5.3",
     "ws": "^8.20.0"
   },
