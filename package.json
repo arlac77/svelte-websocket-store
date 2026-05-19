@@ -68,6 +68,11 @@
     "mf-hosting-cloudflare": "^2.0.0",
     "mf-hosting-frontend": "^4.0.5"
   },
+  "overrides": {
+    "c8": {
+      "yargs": "^18.0.0"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arlac77/svelte-websocket-store.git"
