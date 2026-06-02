@@ -23,6 +23,7 @@ jobs:
             - 24.15.0
             - 26.1.0
             - 26.2.0
+            - 26.3.0
       - name: install
         run: npm ci
       - name: run docs
