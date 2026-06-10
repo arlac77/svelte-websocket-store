@@ -28,6 +28,8 @@ export function websocketStore(url, initialValue, socketOptions) {
     }
 
     if (socket) {
+      socket.onclose = null;
+      socket.onerror = null;
       socket.close();
       socket = undefined;
     }
@@ -51,7 +53,7 @@ export function websocketStore(url, initialValue, socketOptions) {
       return openPromise;
     }
     if (socket) {
-      return
+      return;
     }
 
     socket = new WebSocket(url, socketOptions);
@@ -79,9 +81,16 @@ export function websocketStore(url, initialValue, socketOptions) {
 
   return {
     set(value) {
-      const send = () => socket.send(JSON.stringify(value));
-      if (socket.readyState !== WebSocket.OPEN) open().then(send);
-      else send();
+      const send = () => {
+        if (socket && socket.readyState === WebSocket.OPEN) {
+          socket.send(JSON.stringify(value));
+        }
+      };
+      if (!socket || socket.readyState !== WebSocket.OPEN) {
+        open().then(send).catch(() => {});
+      } else {
+        send();
+      }
     },
     subscribe(subscription) {
       open();
