@@ -59,7 +59,7 @@
     "svelte-common": "^6.19.80",
     "vite": "^8.1.4",
     "vite-plugin-compression2": "^2.5.3",
-    "ws": "^8.21.0"
+    "ws": "^8.21.1"
   },
   "peerDependencies": {
     "svelte": "^5.45.8"
