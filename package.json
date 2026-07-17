@@ -55,7 +55,7 @@
     "npm-pkgbuild": "^20.8.2",
     "playwright": "^1.61.1",
     "semantic-release": "^25.0.7",
-    "svelte": "^5.56.5",
+    "svelte": "^5.56.6",
     "svelte-common": "^6.19.80",
     "vite": "^8.1.5",
     "vite-plugin-compression2": "^2.5.3",
@@ -67,11 +67,6 @@
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^2.0.0",
     "mf-hosting-frontend": "^4.0.8"
-  },
-  "overrides": {
-    "c8": {
-      "yargs": "^18.0.0"
-    }
   },
   "repository": {
     "type": "git",
