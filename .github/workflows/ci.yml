@@ -23,7 +23,7 @@ jobs:
           - 26.4.0
     steps:
       - name: checkout
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
       - name: prepare node
         uses: actions/setup-node@v7.0.0
         with:
@@ -62,7 +62,7 @@ jobs:
       id-token: write
     steps:
       - name: checkout
-        uses: actions/checkout@v7.0.0
+        uses: actions/checkout@v7.0.1
       - name: prepare node
         uses: actions/setup-node@v7.0.0
         with:
