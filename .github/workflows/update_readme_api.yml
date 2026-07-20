@@ -5,6 +5,9 @@ on:
   push:
     paths:
       - src/*
+permissions:
+  contents: read
+  pull-requests: write
 jobs:
   update_readme_api:
     runs-on: ubuntu-latest
