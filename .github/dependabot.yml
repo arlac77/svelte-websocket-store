@@ -4,6 +4,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "fix(deps):"
       prefix-development: "chore(deps):"
@@ -13,6 +15,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "chore(action):"
     labels:
@@ -22,7 +26,7 @@ updates:
     schedule:
       interval: daily
     cooldown:
-      default-days: 2
+      default-days: 7
     commit-message:
       prefix: "fix(deps):"
       prefix-development: "chore(deps):"
@@ -32,6 +36,8 @@ updates:
     directory: /
     schedule:
       interval: daily
+    cooldown:
+      default-days: 7
     commit-message:
       prefix: "chore(action):"
     labels:
@@ -41,7 +47,7 @@ updates:
     schedule:
       interval: daily
     cooldown:
-      default-days: 2
+      default-days: 7
     commit-message:
       prefix: "chore(action):"
     labels:
