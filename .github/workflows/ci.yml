@@ -44,7 +44,7 @@ jobs:
           retention-days: 30
         if: ${{ !cancelled() }}
       - name: coveralls
-        uses: coverallsapp/github-action@v2
+        uses: coverallsapp/github-action@v2.3.8
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           flag-name: run-${{ matrix.test_number }}
