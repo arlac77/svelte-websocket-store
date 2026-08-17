@@ -3,6 +3,11 @@ ci:
       - any-glob-to-any-file:
           - .github/workflows/*
           - .travis.yml
+  - changed-files:
+      - any-glob-to-any-file:
+          - .github/workflows/*
+          - .gitea/workflows/*
+          - .travis.yml
 dependencies:
   - changed-files:
       - any-glob-to-any-file:
