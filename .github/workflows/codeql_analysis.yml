@@ -37,6 +37,7 @@ jobs:
             - 26.5.0
             - 26.5.1
             - 26.7.0
+            - 26.8.1
       - name: prepare CodeQL
         uses: github/codeql-action/init@v4.37.8
         with:
