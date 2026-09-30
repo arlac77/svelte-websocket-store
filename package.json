@@ -59,14 +59,14 @@
     "svelte-common": "^6.19.80",
     "vite": "^8.3.1",
     "vite-plugin-compression2": "^2.5.3",
-    "ws": "^8.21.3"
+    "ws": "^8.22.0"
   },
   "peerDependencies": {
     "svelte": "^5.45.8"
   },
   "optionalDependencies": {
     "mf-hosting-cloudflare": "^2.0.3",
-    "mf-hosting-frontend": "^4.1.0"
+    "mf-hosting-frontend": "^4.1.1"
   },
   "repository": {
     "type": "git",
