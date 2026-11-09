@@ -44,10 +44,10 @@ jobs:
             - 26.12.1
             - 26.13.0
       - name: prepare CodeQL
-        uses: github/codeql-action/init@v4.39.2
+        uses: github/codeql-action/init@v4.39.3
         with:
           languages: javascript
       - name: install
         run: npm ci
       - name: perform CodeQL analysis
-        uses: github/codeql-action/init@v4.39.2
+        uses: github/codeql-action/init@v4.39.3
