@@ -52,7 +52,7 @@
     "c8": "^12.0.0",
     "documentation": "^14.0.3",
     "mf-styling": "^3.3.33",
-    "npm-pkgbuild": "^22.3.3",
+    "npm-pkgbuild": "^22.3.5",
     "playwright": "^1.65.0",
     "semantic-release": "^25.0.9",
     "svelte": "^5.57.3",
