@@ -36,6 +36,7 @@ jobs:
             - 26.12.0
             - 26.12.1
             - 26.13.0
+            - 26.13.1
       - name: remove lock
         run: rm package-lock.json
       - name: install playwright
